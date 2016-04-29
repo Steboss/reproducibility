@@ -1,0 +1,491 @@
+CUDA DEVICES: 1
+lambda is:  0.0000
+"/home/julien/sire.app/share/Sire/scripts/somd-freenrg.py" 
+Reading topology file "../../input/SYSTEM.top" 
+Reading coordinate file "../../input/SYSTEM.crd" 
+Building 800 molecule(s)... 
+ Getting space information  
+Read space "PeriodicBox( ( 29.452, 28.9059, 28.6272 ) )" 
+...complete 
+
+Loading configuration information from file sim.cfg
+
+ 
+Running a somd-freenrg calculation using files ../../input/SYSTEM.top, ../../input/SYSTEM.crd and ../../input/MORPH.pert.
+Using parameters:
+===============
+andersen == True
+barostat == True
+buffered coordinates frequency == 500
+center solute == True
+constraint == allbonds
+crdfile == ../../input/SYSTEM.crd
+cutoff distance == 10 angstrom
+cutoff type == cutoffperiodic
+energy frequency == 100
+equilibrate == False
+equilibration iterations == 5000
+lambda array == (0.0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625, 0.625, 0.6875, 0.75, 0.8125, 0.875, 0.9375, 1.0)
+lambda_val == 0.0
+minimal coordinate saving == True
+minimise == True
+morphfile == ../../input/MORPH.pert
+ncycles == 100
+nmoves == 10000
+platform == CUDA
+precision == mixed
+save coordinates == True
+topfile == ../../input/SYSTEM.top
+===============
+
+### Running Single Topology Molecular Dynamics Free Energy on node010 ###
+###================Setting up calculation=====================###
+New run. Loading input and creating restart
+lambda is 0.0
+Create the System...
+Selecting dummy groups
+Creating force fields... 
+Setting up the simulation with random seed 267605
+Setting up moves...
+Created a MD move that uses OpenMM for all molecules on 0 
+Generated random seed number 267605 
+Saving restart
+Setting up sim file. 
+There are 2408 atoms in the group 
+###===========================================================###
+
+###=======================Minimisation========================###
+Running minimisation.
+###===========================================================###
+
+###====================somd-freenrg run=======================###
+Starting somd-freenrg run...
+10000 moves 100 cycles, 2000 ps simulation time
+
+Cycle =  1 
+
+
+Cycle =  2 
+
+
+Cycle =  3 
+
+
+Cycle =  4 
+
+
+Cycle =  5 
+
+
+Cycle =  6 
+
+
+Cycle =  7 
+
+
+Cycle =  8 
+
+
+Cycle =  9 
+
+
+Cycle =  10 
+
+
+Cycle =  11 
+
+
+Cycle =  12 
+
+
+Cycle =  13 
+
+
+Cycle =  14 
+
+
+Cycle =  15 
+
+
+Cycle =  16 
+
+
+Cycle =  17 
+
+
+Cycle =  18 
+
+
+Cycle =  19 
+
+
+Cycle =  20 
+
+
+Cycle =  21 
+
+
+Cycle =  22 
+
+
+Cycle =  23 
+
+
+Cycle =  24 
+
+
+Cycle =  25 
+
+
+Cycle =  26 
+
+
+Cycle =  27 
+
+
+Cycle =  28 
+
+
+Cycle =  29 
+
+
+Cycle =  30 
+
+
+Cycle =  31 
+
+
+Cycle =  32 
+
+
+Cycle =  33 
+
+
+Cycle =  34 
+
+
+Cycle =  35 
+
+
+Cycle =  36 
+
+
+Cycle =  37 
+
+
+Cycle =  38 
+
+
+Cycle =  39 
+
+
+Cycle =  40 
+
+
+Cycle =  41 
+
+
+Cycle =  42 
+
+
+Cycle =  43 
+
+
+Cycle =  44 
+
+
+Cycle =  45 
+
+
+Cycle =  46 
+
+
+Cycle =  47 
+
+
+Cycle =  48 
+
+
+Cycle =  49 
+
+
+Cycle =  50 
+
+
+Cycle =  51 
+
+
+Cycle =  52 
+
+
+Cycle =  53 
+
+
+Cycle =  54 
+
+
+Cycle =  55 
+
+
+Cycle =  56 
+
+
+Cycle =  57 
+
+
+Cycle =  58 
+
+
+Cycle =  59 
+
+
+Cycle =  60 
+
+
+Cycle =  61 
+
+
+Cycle =  62 
+
+
+Cycle =  63 
+
+
+Cycle =  64 
+
+
+Cycle =  65 
+
+
+Cycle =  66 
+
+
+Cycle =  67 
+
+
+Cycle =  68 
+
+
+Cycle =  69 
+
+
+Cycle =  70 
+
+
+Cycle =  71 
+
+
+Cycle =  72 
+
+
+Cycle =  73 
+
+
+Cycle =  74 
+
+
+Cycle =  75 
+
+
+Cycle =  76 
+
+
+Cycle =  77 
+
+
+Cycle =  78 
+
+
+Cycle =  79 
+
+
+Cycle =  80 
+
+
+Cycle =  81 
+
+
+Cycle =  82 
+
+
+Cycle =  83 
+
+
+Cycle =  84 
+
+
+Cycle =  85 
+
+
+Cycle =  86 
+
+
+Cycle =  87 
+
+
+Cycle =  88 
+
+
+Cycle =  89 
+
+
+Cycle =  90 
+
+
+Cycle =  91 
+
+
+Cycle =  92 
+
+
+Cycle =  93 
+
+
+Cycle =  94 
+
+
+Cycle =  95 
+
+
+Cycle =  96 
+
+
+Cycle =  97 
+
+
+Cycle =  98 
+
+
+Cycle =  99 
+
+
+Cycle =  100 
+
+Simulation took 1382 s 
+###===========================================================###
+
+Clearing buffers...
+Backing up previous restart
+Saving new restart
+Starting /home/julien/sire.app/bin/somd-freenrg: number of threads equals 32
+Submitted batch job 109040
+Submitted batch job 109041
+Submitted batch job 109042
+"/home/julien/sire.app/share/Sire/scripts/analyse_freenrg.py" 
+!!!WARNING: at the moment the gradietns values are multiply by 0.593 kcal/mol!!!
+Looking for simfile.dat files
+Found in these folders simfile.dat
+
+['/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.0000/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.0625/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.1250/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.1875/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.2500/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.3125/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.3750/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.4375/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.5000/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.5625/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.6250/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.6875/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.7500/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.8125/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.8750/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.9375/simfile.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-1.0000/simfile.dat']
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.0000.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.0625.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.1250.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.1875.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.2500.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.3125.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.3750.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.4375.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.5000.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.5625.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.6250.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.6875.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.7500.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.8125.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.8750.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-0.9375.dat
+/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/analysis_gro/lambda-1.0000.dat
+Started on Thu Apr 28 13:46:14 2016
+Reading metadata from ./lambda-0.6250.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.4375.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.0000.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.1875.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.5000.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.8750.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.5625.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.0625.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.2500.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.8125.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-1.0000.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.3750.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.9375.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.6875.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.7500.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.1250.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+Reading metadata from ./lambda-0.3125.dat; first 0 ps (0 snapshots) will be discarded due to equilibration...
+
+Loading in data from ./lambda-0.0000.dat (state 0) ...
+Loading in data from ./lambda-0.0625.dat (state 1) ...
+Loading in data from ./lambda-0.1250.dat (state 2) ...
+Loading in data from ./lambda-0.1875.dat (state 3) ...
+Loading in data from ./lambda-0.2500.dat (state 4) ...
+Loading in data from ./lambda-0.3125.dat (state 5) ...
+Loading in data from ./lambda-0.3750.dat (state 6) ...
+Loading in data from ./lambda-0.4375.dat (state 7) ...
+Loading in data from ./lambda-0.5000.dat (state 8) ...
+Loading in data from ./lambda-0.5625.dat (state 9) ...
+Loading in data from ./lambda-0.6250.dat (state 10) ...
+Loading in data from ./lambda-0.6875.dat (state 11) ...
+Loading in data from ./lambda-0.7500.dat (state 12) ...
+Loading in data from ./lambda-0.8125.dat (state 13) ...
+Loading in data from ./lambda-0.8750.dat (state 14) ...
+Loading in data from ./lambda-0.9375.dat (state 15) ...
+Loading in data from ./lambda-1.0000.dat (state 16) ...
+
+Estimating the free energy change with TI-CUBIC...
+------------ ----------------------- 
+   States      TI-CUBIC (kcal/mol)   
+------------ ----------------------- 
+   0 -- 1        -0.6092  +-  0.0037 
+   1 -- 2        -0.3476  +-  0.0032 
+   2 -- 3        -0.1666  +-  0.0026 
+   3 -- 4        -0.0555  +-  0.0020 
+   4 -- 5         0.0139  +-  0.0015 
+   5 -- 6         0.0526  +-  0.0011 
+   6 -- 7         0.0597  +-  0.0009 
+   7 -- 8         0.0543  +-  0.0008 
+   8 -- 9         0.0401  +-  0.0008 
+   9 -- 10        0.0334  +-  0.0008 
+  10 -- 11        0.0218  +-  0.0007 
+  11 -- 12        0.0100  +-  0.0008 
+  12 -- 13        0.0017  +-  0.0008 
+  13 -- 14       -0.0068  +-  0.0008 
+  14 -- 15       -0.0136  +-  0.0008 
+  15 -- 16        0.0372  +-  0.0008 
+------------ ----------------------- 
+    TOTAL:       -0.8746  +-  0.0082 
+
+************************************
+   The above table has been stored in   
+             ./results.txt              
+     while the full-precision data      
+ (along with the simulation profile) in 
+            ./results.pickle            
+************************************
+
+Time spent: 0 hours, 0 minutes, and 4.03 seconds.
+Finished on Thu Apr 28 13:46:18 2016
+Traceback (most recent call last):
+  File "extract_results.py", line 41, in <module>
+    mbar_result = float(reader[len(reader)-4].split()[7])
+IndexError: list index out of range
+Looking for gradients.dat files
+Found in these folders gradients dat
+
+['/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.0000/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.0625/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.1250/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.1875/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.2500/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.3125/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.3750/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.4375/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.5000/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.5625/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.6250/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.6875/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.7500/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.8125/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.8750/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-0.9375/gradients.dat', '/home/steboss/projects/reproducibility/neopentane_issue/propane~ethane/run001/free/output/lambda-1.0000/gradients.dat']
+Processing lambda_val	0.0000
+Processing lambda_val	0.0625
+Processing lambda_val	0.1250
+Processing lambda_val	0.1875
+Processing lambda_val	0.2500
+Processing lambda_val	0.3125
+Processing lambda_val	0.3750
+Processing lambda_val	0.4375
+Processing lambda_val	0.5000
+Processing lambda_val	0.5625
+Processing lambda_val	0.6250
+Processing lambda_val	0.6875
+Processing lambda_val	0.7500
+Processing lambda_val	0.8125
+Processing lambda_val	0.8750
+Processing lambda_val	0.9375
+Processing lambda_val	1.0000

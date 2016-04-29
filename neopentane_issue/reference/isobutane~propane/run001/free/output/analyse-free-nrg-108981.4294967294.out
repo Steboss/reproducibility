@@ -1,0 +1,6 @@
+"/home/julien/sire.app/share/Sire/scripts/analyse_freenrg_mbar.py" 
+/home/julien/sire.app/lib/python3.5/site-packages/pymbar/utils.py:70: FutureWarning: comparison to `None` will result in an elementwise object comparison in the future.
+  if N_k == None:
+/home/julien/sire.app/lib/python3.5/site-packages/scipy/optimize/minpack.py:236: RuntimeWarning: xtol=0.000000 is too small, no further improvement in the approximate
+  solution is possible.
+  warnings.warn(msg, RuntimeWarning)

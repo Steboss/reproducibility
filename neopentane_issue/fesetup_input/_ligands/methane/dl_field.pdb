@@ -1,0 +1,11 @@
+ATOM      1   C1 LIG     1       1.067  -0.047   0.058  0.00  1.00           C
+ATOM      2   H2 LIG     1       2.179  -0.047   0.058  0.00  1.00           H
+ATOM      3   H3 LIG     1       0.696  -1.058   0.335  0.00  1.00           H
+ATOM      4   H4 LIG     1       0.697   0.219  -0.956  0.00  1.00           H
+ATOM      5   H5 LIG     1       0.697   0.698   0.795  0.00  1.00           H
+CONECT    1    2    3    4    5    
+CONECT    2    1    
+CONECT    3    1    
+CONECT    4    1    
+CONECT    5    1    
+ END

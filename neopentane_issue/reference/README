@@ -1,0 +1,47 @@
+#APR2015 Stefano Bosisio
+
+
+Test to check consistency of Sire main code for neopentane -> methane
+
+##############
+USAGE from scratch:
+
+1) python prepare.py  feset_input_perturbations/sire/ethane~methane
+and so on for all the pert
+
+2) bash cluster.sh
+
+3) Once everything is finished (hopefully) fine:
+   python collect_average.py
+
+
+##############
+The inputfiles are created with FESetup and store in fesetup_input folder
+
+prepare.py  prepare all the simulations to be setup automatically:
+
+e.g.
+
+python prepare.py  fesetup_input/_perturbations/sire/ethane~methane
+
+input files are copied form protocol/ folder
+
+
+cluster.sh is the script to run all the simulations:
+bash cluster.sh
+
+
+Once everysimulation is finished, (hopefully) water and vacuum analysis should start
+
+Once everything is finished, final data can be collected through collect_average.py:
+
+python collect_average.py
+
+It creates the folder output_results  where are stored:
+
+VALUES.dat:  comparison between Spline interpolation free energy
+				TI regression scheme
+				MBAR
+	     for all the perturbation and the finale neopentane~methane relative f.e.
+
+perturbation folders/ :  gradients profile in water and vacuum are stored here

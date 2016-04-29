@@ -1,0 +1,20 @@
+Neopentane~isobutane
+Spline:     0.49401 +/-  0.02300
+TIregr:     0.44601 +/-  0.05848
+MBAR  :     0.69401 +/-  0.02323
+Isobutane~propane
+Spline:     0.59257 +/-  0.02243
+TIregr:     0.56457 +/-  0.05250
+MBAR  :     0.83557 +/-  0.02263
+Propane~ethane
+Spline:     0.49488 +/-  0.02154
+TIregr:     0.41188 +/-  0.05355
+MBAR  :     0.73588 +/-  0.02135
+Ethane~methane
+Spline:     0.51256 +/-  0.01935
+TIregr:     0.58756 +/-  0.04879
+MBAR  :     0.68256 +/-  0.01874
+Neopentane~methane
+Spline:     1.06890 +/-  0.04324
+TIregr:     0.83490 +/-  0.10688
+MBAR  :     1.58290 +/-  0.04312

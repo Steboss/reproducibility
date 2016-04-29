@@ -1,0 +1,7 @@
+Stefano Bosisio
+
+Reproducibility project
+Here all the folder to simulate reproducibility problems with Sire are stored
+
+neopentane_issue:  neopentane to methane simulation, split into four different transformation
+		   Simulation to check a bug within Sire and OpenMM energies passing

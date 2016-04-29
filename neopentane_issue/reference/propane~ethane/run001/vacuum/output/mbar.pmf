@@ -1,0 +1,18 @@
+# Analysing data contained in file(s) "['lambda-0.0000/simfile.dat', 'lambda-0.0625/simfile.dat', 'lambda-0.1250/simfile.dat', 'lambda-0.1875/simfile.dat', 'lambda-0.2500/simfile.dat', 'lambda-0.3125/simfile.dat', 'lambda-0.3750/simfile.dat', 'lambda-0.4375/simfile.dat', 'lambda-0.5000/simfile.dat', 'lambda-0.5625/simfile.dat', 'lambda-0.6250/simfile.dat', 'lambda-0.6875/simfile.dat', 'lambda-0.7500/simfile.dat', 'lambda-0.8125/simfile.dat', 'lambda-0.8750/simfile.dat', 'lambda-0.9375/simfile.dat', 'lambda-1.0000/simfile.dat']"
+0.000000.2 0.000000
+0.062500.2 -0.610206
+0.125000.2 -0.998155
+0.187500.2 -1.242094
+0.250000.2 -1.396920
+0.312500.2 -1.502609
+0.375000.2 -1.584510
+0.437500.2 -1.656617
+0.500000.2 -1.725901
+0.562500.2 -1.795585
+0.625000.2 -1.867072
+0.687500.2 -1.940946
+0.750000.2 -2.017442
+0.812500.2 -2.096667
+0.875000.2 -2.178665
+0.937500.2 -2.263413
+1.000000.2 -2.349909

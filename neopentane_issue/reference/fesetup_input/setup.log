@@ -1,0 +1,1294 @@
+
+===== START ===== 2016-04-26 21:53:03.833345 ===== START =====
+
+FESetup SUI version: 0.5.0
+
+
+Force field and MD engine:
+[forcefield=amber, type=ff14SB, solvent=tip3p, div_ions=hfe, add_ons=[], mdengine=amber, parmchk_version=2]
+
+*** Working on neopentane ***
+
+Copying directory contents of setup/neopentane to /home/steboss/projects/reproducibility/neopentane_issue/_ligands/neopentane
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_ligands/neopentane
+
+** Starting prepare
+Converting/Writing solute.pdb (pdb format) to mol2 format
+Total formal charge taken from coordinate file
+
+Ligand key data:
+Formula: C5H12
+SMILES: CC(C)(C)C
+InChIKey: CRSOQBOWXPBRES-UHFFFAOYSA-N
+Net charge: 0
+Molecular weight: 72.148780
+
+** Finished with prepare
+
+
+** Starting param
+Deriving AMBER/GAFF force field parameters
+Optimizing structure and creating AM1/BCC charges
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand_conv.mol2 -fi mol2 -o ligand.ac -fo ac -c bcc -nc 0 -m 1 -df 2 -at gaff -du y -an y -j 4 -s 2 -eq 2 -pf y -rn LIG -ek "qm_theory='AM1',grms_tol=0.0002,tight_p_conv=1,
+  scfconv=1.0d-10,itrmax=500,pseudo_diag=1,
+  ndiis_attempts=0,maxcyc=1000,
+"
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+    Total number of electrons: 42; net charge: 0
+    
+    Running: /home/steboss/Software/amber14/bin/sqm -O -i sqm.in -o sqm.out
+    
+    Running: /home/steboss/Software/amber14/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /home/steboss/Software/amber14/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+  }
+
+SCF has converged with 0 preminimisation steps and scfconv = 1.0d-10 kcal/mol
+
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o ligand.ac -fo ac -a sqm.pdb -fa pdb -ao crd -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Geometry has converged after 0 steps, heat of formation: unknown and gradient = unknown
+
+Creating frcmod file
+Executing command:
+/home/steboss/Software/amber14/bin/parmchk2 -i ligand.ac -f ac -o ligand.frcmod -a N 
+
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o corr.ac -fo ac -cf corr.ch -c rc -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Total molecule charge is 0.00
+
+** Finished with param
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+saveAmberParm s "vacuum.parm7" "vacuum.rst7"
+savepdb s "vacuum.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+solvateBox s TIP3PBOX 12.0 0.75
+addions s Cl- 0
+saveAmberParm s "solvated.parm7" "solvated.rst7"
+savepdb s "solvated.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting minimize
+Running minimisation with protocol ALL
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i min00001.in -p solvated.parm7 -c solvated.rst7 -O -o min00001.out -e min00001.en -x min00001.nc -inf min00001.info -r min00001.rst7 -ref solvated.rst7
+
+** Finished with minimize
+
+
+** Starting md
+Running MD with protocol HEAT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00002.in -p solvated.parm7 -c min00001.rst7 -O -o md00002.out -e md00002.en -x md00002.nc -inf md00002.info -r md00002.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol CONSTT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00003.in -p solvated.parm7 -c md00002.rst7 -O -o md00003.out -e md00003.en -x md00003.nc -inf md00003.info -r md00003.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol PRESS
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00004.in -p solvated.parm7 -c md00003.rst7 -O -o md00004.out -e md00004.en -x md00004.nc -inf md00004.info -r md00004.rst7 -ref md00003.rst7
+
+** Finished with md
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+*** Working on isobutane ***
+
+Copying directory contents of setup/isobutane to /home/steboss/projects/reproducibility/neopentane_issue/_ligands/isobutane
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_ligands/isobutane
+
+** Starting prepare
+Converting/Writing solute.pdb (pdb format) to mol2 format
+Total formal charge taken from coordinate file
+
+Ligand key data:
+Formula: C4H10
+SMILES: CC(C)C
+InChIKey: NNPPMTNAJDCUHE-UHFFFAOYSA-N
+Net charge: 0
+Molecular weight: 58.122200
+
+** Finished with prepare
+
+
+** Starting param
+Deriving AMBER/GAFF force field parameters
+Optimizing structure and creating AM1/BCC charges
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand_conv.mol2 -fi mol2 -o ligand.ac -fo ac -c bcc -nc 0 -m 1 -df 2 -at gaff -du y -an y -j 4 -s 2 -eq 2 -pf y -rn LIG -ek "qm_theory='AM1',grms_tol=0.0002,tight_p_conv=1,
+  scfconv=1.0d-10,itrmax=500,pseudo_diag=1,
+  ndiis_attempts=0,maxcyc=1000,
+"
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+    Total number of electrons: 34; net charge: 0
+    
+    Running: /home/steboss/Software/amber14/bin/sqm -O -i sqm.in -o sqm.out
+    
+    Running: /home/steboss/Software/amber14/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /home/steboss/Software/amber14/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+  }
+
+SCF has converged with 0 preminimisation steps and scfconv = 1.0d-10 kcal/mol
+
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o ligand.ac -fo ac -a sqm.pdb -fa pdb -ao crd -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Geometry has converged after 0 steps, heat of formation: unknown and gradient = unknown
+
+Creating frcmod file
+Executing command:
+/home/steboss/Software/amber1
+===== START ===== 2016-04-27 10:52:38.803555 ===== START =====
+
+FESetup SUI version: 0.5.0
+
+
+Force field and MD engine:
+[forcefield=amber, type=ff14SB, solvent=tip3p, div_ions=hfe, add_ons=[], mdengine=amber, parmchk_version=2]
+
+*** Working on neopentane ***
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_ligands/neopentane
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+*** Working on isobutane ***
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_ligands/isobutane
+
+** Starting prepare
+Leaving solute.pdb unmodified.
+Total formal charge taken from coordinate file
+
+Ligand key data:
+Formula: C4H10
+SMILES: CC(C)C
+InChIKey: NNPPMTNAJDCUHE-UHFFFAOYSA-N
+Net charge: 0
+Molecular weight: 58.122200
+
+** Finished with prepare
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+saveAmberParm s "vacuum.parm7" "vacuum.rst7"
+savepdb s "vacuum.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+solvateBox s TIP3PBOX 12.0 0.75
+saveAmberParm s "solvated.parm7" "solvated.rst7"
+savepdb s "solvated.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting minimize
+Running minimisation with protocol ALL
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i min00001.in -p solvated.parm7 -c solvated.rst7 -O -o min00001.out -e min00001.en -x min00001.nc -inf min00001.info -r min00001.rst7 -ref solvated.rst7
+
+** Finished with minimize
+
+
+** Starting md
+Running MD with protocol HEAT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00002.in -p solvated.parm7 -c min00001.rst7 -O -o md00002.out -e md00002.en -x md00002.nc -inf md00002.info -r md00002.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol CONSTT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00003.in -p solvated.parm7 -c md00002.rst7 -O -o md00003.out -e md00003.en -x md00003.nc -inf md00003.info -r md00003.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol PRESS
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00004.in -p solvated.parm7 -c md00003.rst7 -O -o md00004.out -e md00004.en -x md00004.nc -inf md00004.info -r md00004.rst7 -ref md00003.rst7
+
+** Finished with md
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+*** Working on propane ***
+
+Copying directory contents of setup/propane to /home/steboss/projects/reproducibility/neopentane_issue/_ligands/propane
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_ligands/propane
+
+** Starting prepare
+Converting/Writing solute.pdb (pdb format) to mol2 format
+Total formal charge taken from coordinate file
+
+Ligand key data:
+Formula: C3H8
+SMILES: CCC
+InChIKey: ATUOYWHBWRKTHZ-UHFFFAOYSA-N
+Net charge: 0
+Molecular weight: 44.095620
+
+** Finished with prepare
+
+
+** Starting param
+Deriving AMBER/GAFF force field parameters
+Optimizing structure and creating AM1/BCC charges
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand_conv.mol2 -fi mol2 -o ligand.ac -fo ac -c bcc -nc 0 -m 1 -df 2 -at gaff -du y -an y -j 4 -s 2 -eq 2 -pf y -rn LIG -ek "qm_theory='AM1',grms_tol=0.0002,tight_p_conv=1,
+  scfconv=1.0d-10,itrmax=500,pseudo_diag=1,
+  ndiis_attempts=0,maxcyc=1000,
+"
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+    Total number of electrons: 26; net charge: 0
+    
+    Running: /home/steboss/Software/amber14/bin/sqm -O -i sqm.in -o sqm.out
+    
+    Running: /home/steboss/Software/amber14/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /home/steboss/Software/amber14/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+  }
+
+SCF has converged with 0 preminimisation steps and scfconv = 1.0d-10 kcal/mol
+
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o ligand.ac -fo ac -a sqm.pdb -fa pdb -ao crd -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Geometry has converged after 0 steps, heat of formation: unknown and gradient = unknown
+
+Creating frcmod file
+Executing command:
+/home/steboss/Software/amber14/bin/parmchk2 -i ligand.ac -f ac -o ligand.frcmod -a N 
+
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o corr.ac -fo ac -cf corr.ch -c rc -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Total molecule charge is 0.00
+
+** Finished with param
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+saveAmberParm s "vacuum.parm7" "vacuum.rst7"
+savepdb s "vacuum.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+solvateBox s TIP3PBOX 12.0 0.75
+addions s Cl- 0
+saveAmberParm s "solvated.parm7" "solvated.rst7"
+savepdb s "solvated.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting minimize
+Running minimisation with protocol ALL
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i min00001.in -p solvated.parm7 -c solvated.rst7 -O -o min00001.out -e min00001.en -x min00001.nc -inf min00001.info -r min00001.rst7 -ref solvated.rst7
+
+** Finished with minimize
+
+
+** Starting md
+Running MD with protocol HEAT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00002.in -p solvated.parm7 -c min00001.rst7 -O -o md00002.out -e md00002.en -x md00002.nc -inf md00002.info -r md00002.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol CONSTT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00003.in -p solvated.parm7 -c md00002.rst7 -O -o md00003.out -e md00003.en -x md00003.nc -inf md00003.info -r md00003.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol PRESS
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00004.in -p solvated.parm7 -c md00003.rst7 -O -o md00004.out -e md00004.en -x md00004.nc -inf md00004.info -r md00004.rst7 -ref md00003.rst7
+
+** Finished with md
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+*** Working on ethane ***
+
+Copying directory contents of setup/ethane to /home/steboss/projects/reproducibility/neopentane_issue/_ligands/ethane
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_ligands/ethane
+
+** Starting prepare
+Converting/Writing solute.pdb (pdb format) to mol2 format
+Total formal charge taken from coordinate file
+
+Ligand key data:
+Formula: C2H6
+SMILES: CC
+InChIKey: OTMSDBZUPAUEDD-UHFFFAOYSA-N
+Net charge: 0
+Molecular weight: 30.069040
+
+** Finished with prepare
+
+
+** Starting param
+Deriving AMBER/GAFF force field parameters
+Optimizing structure and creating AM1/BCC charges
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand_conv.mol2 -fi mol2 -o ligand.ac -fo ac -c bcc -nc 0 -m 1 -df 2 -at gaff -du y -an y -j 4 -s 2 -eq 2 -pf y -rn LIG -ek "qm_theory='AM1',grms_tol=0.0002,tight_p_conv=1,
+  scfconv=1.0d-10,itrmax=500,pseudo_diag=1,
+  ndiis_attempts=0,maxcyc=1000,
+"
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+    Total number of electrons: 18; net charge: 0
+    
+    Running: /home/steboss/Software/amber14/bin/sqm -O -i sqm.in -o sqm.out
+    
+    Running: /home/steboss/Software/amber14/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /home/steboss/Software/amber14/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+  }
+
+SCF has converged with 0 preminimisation steps and scfconv = 1.0d-10 kcal/mol
+
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o ligand.ac -fo ac -a sqm.pdb -fa pdb -ao crd -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Geometry has converged after 0 steps, heat of formation: unknown and gradient = unknown
+
+Creating frcmod file
+Executing command:
+/home/steboss/Software/amber14/bin/parmchk2 -i ligand.ac -f ac -o ligand.frcmod -a N 
+
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o corr.ac -fo ac -cf corr.ch -c rc -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Total molecule charge is 0.00
+
+** Finished with param
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+saveAmberParm s "vacuum.parm7" "vacuum.rst7"
+savepdb s "vacuum.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+solvateBox s TIP3PBOX 12.0 0.75
+addions s Cl- 0
+saveAmberParm s "solvated.parm7" "solvated.rst7"
+savepdb s "solvated.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting minimize
+Running minimisation with protocol ALL
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i min00001.in -p solvated.parm7 -c solvated.rst7 -O -o min00001.out -e min00001.en -x min00001.nc -inf min00001.info -r min00001.rst7 -ref solvated.rst7
+
+** Finished with minimize
+
+
+** Starting md
+Running MD with protocol HEAT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00002.in -p solvated.parm7 -c min00001.rst7 -O -o md00002.out -e md00002.en -x md00002.nc -inf md00002.info -r md00002.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol CONSTT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00003.in -p solvated.parm7 -c md00002.rst7 -O -o md00003.out -e md00003.en -x md00003.nc -inf md00003.info -r md00003.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol PRESS
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00004.in -p solvated.parm7 -c md00003.rst7 -O -o md00004.out -e md00004.en -x md00004.nc -inf md00004.info -r md00004.rst7 -ref md00003.rst7
+
+** Finished with md
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+*** Working on methane ***
+
+Copying directory contents of setup/methane to /home/steboss/projects/reproducibility/neopentane_issue/_ligands/methane
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_ligands/methane
+
+** Starting prepare
+Converting/Writing solute.pdb (pdb format) to mol2 format
+Total formal charge taken from coordinate file
+
+Ligand key data:
+Formula: CH4
+SMILES: C
+InChIKey: VNWKTOKETHGBQD-UHFFFAOYSA-N
+Net charge: 0
+Molecular weight: 16.042460
+
+** Finished with prepare
+
+
+** Starting param
+Deriving AMBER/GAFF force field parameters
+Optimizing structure and creating AM1/BCC charges
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand_conv.mol2 -fi mol2 -o ligand.ac -fo ac -c bcc -nc 0 -m 1 -df 2 -at gaff -du y -an y -j 4 -s 2 -eq 2 -pf y -rn LIG -ek "qm_theory='AM1',grms_tol=0.0002,tight_p_conv=1,
+  scfconv=1.0d-10,itrmax=500,pseudo_diag=1,
+  ndiis_attempts=0,maxcyc=1000,
+"
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/atomtype -f ac -p bcc -o ANTECHAMBER_AM1BCC.AC -i ANTECHAMBER_AM1BCC_PRE.AC
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+    Total number of electrons: 10; net charge: 0
+    
+    Running: /home/steboss/Software/amber14/bin/sqm -O -i sqm.in -o sqm.out
+    
+    Running: /home/steboss/Software/amber14/bin/am1bcc -i ANTECHAMBER_AM1BCC_PRE.AC -o ANTECHAMBER_AM1BCC.AC -f ac -p /home/steboss/Software/amber14/dat/antechamber/BCCPARM.DAT -s 2 -j 1
+  }
+
+SCF has converged with 0 preminimisation steps and scfconv = 1.0d-10 kcal/mol
+
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o ligand.ac -fo ac -a sqm.pdb -fa pdb -ao crd -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Geometry has converged after 0 steps, heat of formation: unknown and gradient = unknown
+
+Creating frcmod file
+Executing command:
+/home/steboss/Software/amber14/bin/parmchk2 -i ligand.ac -f ac -o ligand.frcmod -a N 
+
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o corr.ac -fo ac -cf corr.ch -c rc -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Total molecule charge is 0.00
+
+** Finished with param
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+saveAmberParm s "vacuum.parm7" "vacuum.rst7"
+savepdb s "vacuum.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/antechamber -i ligand.ac -fi ac -o gaff.mol2 -fo mol2 -at gaff -s 2 -pf y
+
+  stdout {
+    Running: /home/steboss/Software/amber14/bin/bondtype -j full -i ANTECHAMBER_BOND_TYPE.AC0 -o ANTECHAMBER_BOND_TYPE.AC -f ac
+    
+    Running: /home/steboss/Software/amber14/bin/atomtype -i ANTECHAMBER_AC.AC0 -o ANTECHAMBER_AC.AC -p gaff
+  }
+
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "ligand.frcmod"
+s = loadmol2 "gaff.mol2"
+savemol2 s leap.mol2 1
+
+solvateBox s TIP3PBOX 12.0 0.75
+saveAmberParm s "solvated.parm7" "solvated.rst7"
+savepdb s "solvated.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting minimize
+Running minimisation with protocol ALL
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i min00001.in -p solvated.parm7 -c solvated.rst7 -O -o min00001.out -e min00001.en -x min00001.nc -inf min00001.info -r min00001.rst7 -ref solvated.rst7
+
+** Finished with minimize
+
+
+** Starting md
+Running MD with protocol HEAT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00002.in -p solvated.parm7 -c min00001.rst7 -O -o md00002.out -e md00002.en -x md00002.nc -inf md00002.info -r md00002.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol CONSTT
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00003.in -p solvated.parm7 -c md00002.rst7 -O -o md00003.out -e md00003.en -x md00003.nc -inf md00003.info -r md00003.rst7 -ref solvated.rst7
+
+** Finished with md
+
+
+** Starting md
+Running MD with protocol PRESS
+Executing command:
+ /home/steboss/Software/amber14/bin/sander -i md00004.in -p solvated.parm7 -c md00003.rst7 -O -o md00004.out -e md00004.en -x md00004.nc -inf md00004.info -r md00004.rst7 -ref md00003.rst7
+
+** Finished with md
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+Creating directory /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/neopentane~isobutane
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/neopentane~isobutane
+
+** Starting setup
+Running RDKit/fmcs with arguments:
+atomCompare=any, completeRingsOnly=True, bondCompare=any, timeout=600.0, maximize=atoms
+
+Atom mapping between initial and final states:
+AtomName('C1') <--> AtomName('C1')
+AtomName('C2') <--> AtomName('C2')
+AtomName('C3') <--> AtomName('H8')
+AtomName('C4') <--> AtomName('C3')
+AtomName('C5') <--> AtomName('C4')
+AtomName('H6') <--> AtomName('H5')
+AtomName('H7') <--> AtomName('H6')
+AtomName('H8') <--> AtomName('H7')
+AtomName('H9') <--> AtomName('DU15')
+AtomName('H10') <--> AtomName('DU16')
+AtomName('H11') <--> AtomName('DU17')
+AtomName('H12') <--> AtomName('H9')
+AtomName('H13') <--> AtomName('H10')
+AtomName('H14') <--> AtomName('H11')
+AtomName('H15') <--> AtomName('H12')
+AtomName('H16') <--> AtomName('H13')
+AtomName('H17') <--> AtomName('H14')
+
+
+Writing pert topology for pertfile
+
+Creating frcmod file
+Executing command:
+/home/steboss/Software/amber14/bin/parmchk2 -i /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/neopentane~isobutane/MORPH.mol2 -f mol2 -o /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/neopentane~isobutane/MORPH.frcmod -a N 
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/neopentane~isobutane/MORPH.frcmod"
+s = loadmol2 "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/neopentane~isobutane/MORPH.mol2"
+savemol2 s leap.mol2 1
+
+saveAmberParm s "vacuum.parm7" "vacuum.rst7"
+savepdb s "vacuum.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting flex
+Computing flexible ligand residues from vacuum.rst7
+** Finished with flex
+
+Writing perturbation file MORPH.pert...
+
+
+impropers:
+Impropers in the final topology that haven't been mapped to the initial topology
+[]
+Impropers in the initial topology that haven't been mapped to the morph
+[]
+** Finished with setup
+
+
+** Starting create_coords
+Using /home/steboss/projects/reproducibility/neopentane_issue/_ligands/neopentane/md00004.rst7 for coordinate file creation
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/neopentane~isobutane/MORPH.frcmod"
+l = loadmol2 "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/neopentane~isobutane/_ligands/MORPH.mol2"
+p = loadpdb "ligand_removed.pdb"
+s = combine { l p }
+
+set default nocenter on
+setBox s centers { 14.80837575 14.9464078 14.9329485 }
+saveAmberParm s "solvated.parm7" "solvated.rst7"
+savepdb s "solvated.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting flex
+Computing flexible ligand residues from solvated.rst7
+** Finished with flex
+
+** Finished with create_coords
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+Creating directory /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/isobutane~propane
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/isobutane~propane
+
+** Starting setup
+Running RDKit/fmcs with arguments:
+atomCompare=any, maximize=atoms, timeout=600.0, completeRingsOnly=True, bondCompare=any
+
+Atom mapping between initial and final states:
+AtomName('C1') <--> AtomName('C1')
+AtomName('C2') <--> AtomName('C2')
+AtomName('C3') <--> AtomName('H7')
+AtomName('C4') <--> AtomName('C3')
+AtomName('H5') <--> AtomName('H4')
+AtomName('H6') <--> AtomName('H5')
+AtomName('H7') <--> AtomName('H6')
+AtomName('H8') <--> AtomName('H8')
+AtomName('H9') <--> AtomName('DU12')
+AtomName('H10') <--> AtomName('DU13')
+AtomName('H11') <--> AtomName('DU14')
+AtomName('H12') <--> AtomName('H9')
+AtomName('H13') <--> AtomName('H10')
+AtomName('H14') <--> AtomName('H11')
+
+
+Writing pert topology for pertfile
+
+Creating frcmod file
+Executing command:
+/home/steboss/Software/amber14/bin/parmchk2 -i /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/isobutane~propane/MORPH.mol2 -f mol2 -o /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/isobutane~propane/MORPH.frcmod -a N 
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/isobutane~propane/MORPH.frcmod"
+s = loadmol2 "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/isobutane~propane/MORPH.mol2"
+savemol2 s leap.mol2 1
+
+saveAmberParm s "vacuum.parm7" "vacuum.rst7"
+savepdb s "vacuum.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting flex
+Computing flexible ligand residues from vacuum.rst7
+** Finished with flex
+
+Writing perturbation file MORPH.pert...
+
+
+impropers:
+Impropers in the final topology that haven't been mapped to the initial topology
+[]
+Impropers in the initial topology that haven't been mapped to the morph
+[]
+** Finished with setup
+
+
+** Starting create_coords
+Using /home/steboss/projects/reproducibility/neopentane_issue/_ligands/isobutane/md00004.rst7 for coordinate file creation
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/isobutane~propane/MORPH.frcmod"
+l = loadmol2 "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/isobutane~propane/_ligands/MORPH.mol2"
+p = loadpdb "ligand_removed.pdb"
+s = combine { l p }
+
+set default nocenter on
+setBox s centers { 14.76771075 14.4938996 14.8919415 }
+saveAmberParm s "solvated.parm7" "solvated.rst7"
+savepdb s "solvated.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting flex
+Computing flexible ligand residues from solvated.rst7
+** Finished with flex
+
+** Finished with create_coords
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+Creating directory /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/propane~ethane
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/propane~ethane
+
+** Starting setup
+Running RDKit/fmcs with arguments:
+atomCompare=any, maximize=atoms, timeout=600.0, completeRingsOnly=True, bondCompare=any
+
+Atom mapping between initial and final states:
+AtomName('C1') <--> AtomName('C1')
+AtomName('C2') <--> AtomName('C2')
+AtomName('C3') <--> AtomName('H6')
+AtomName('H4') <--> AtomName('H3')
+AtomName('H5') <--> AtomName('H4')
+AtomName('H6') <--> AtomName('H5')
+AtomName('H7') <--> AtomName('H7')
+AtomName('H8') <--> AtomName('H8')
+AtomName('H9') <--> AtomName('DU9')
+AtomName('H10') <--> AtomName('DU10')
+AtomName('H11') <--> AtomName('DU11')
+
+
+Writing pert topology for pertfile
+
+Creating frcmod file
+Executing command:
+/home/steboss/Software/amber14/bin/parmchk2 -i /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/propane~ethane/MORPH.mol2 -f mol2 -o /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/propane~ethane/MORPH.frcmod -a N 
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/propane~ethane/MORPH.frcmod"
+s = loadmol2 "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/propane~ethane/MORPH.mol2"
+savemol2 s leap.mol2 1
+
+saveAmberParm s "vacuum.parm7" "vacuum.rst7"
+savepdb s "vacuum.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting flex
+Computing flexible ligand residues from vacuum.rst7
+** Finished with flex
+
+Writing perturbation file MORPH.pert...
+
+
+impropers:
+Impropers in the final topology that haven't been mapped to the initial topology
+[]
+Impropers in the initial topology that haven't been mapped to the morph
+[]
+** Finished with setup
+
+
+** Starting create_coords
+Using /home/steboss/projects/reproducibility/neopentane_issue/_ligands/propane/md00004.rst7 for coordinate file creation
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/propane~ethane/MORPH.frcmod"
+l = loadmol2 "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/propane~ethane/_ligands/MORPH.mol2"
+p = loadpdb "ligand_removed.pdb"
+s = combine { l p }
+
+set default nocenter on
+setBox s centers { 14.72599305 14.45295535 14.3136092 }
+saveAmberParm s "solvated.parm7" "solvated.rst7"
+savepdb s "solvated.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting flex
+Computing flexible ligand residues from solvated.rst7
+** Finished with flex
+
+** Finished with create_coords
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+Creating directory /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/ethane~methane
+Entering /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/ethane~methane
+
+** Starting setup
+Running RDKit/fmcs with arguments:
+atomCompare=any, maximize=atoms, timeout=600.0, completeRingsOnly=True, bondCompare=any
+
+Atom mapping between initial and final states:
+AtomName('C1') <--> AtomName('C1')
+AtomName('C2') <--> AtomName('H2')
+AtomName('H3') <--> AtomName('H3')
+AtomName('H4') <--> AtomName('H4')
+AtomName('H5') <--> AtomName('H5')
+AtomName('H6') <--> AtomName('DU6')
+AtomName('H7') <--> AtomName('DU7')
+AtomName('H8') <--> AtomName('DU8')
+
+
+Writing pert topology for pertfile
+
+Creating frcmod file
+Executing command:
+/home/steboss/Software/amber14/bin/parmchk2 -i /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/ethane~methane/MORPH.mol2 -f mol2 -o /home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/ethane~methane/MORPH.frcmod -a N 
+
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/ethane~methane/MORPH.frcmod"
+s = loadmol2 "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/ethane~methane/MORPH.mol2"
+savemol2 s leap.mol2 1
+
+saveAmberParm s "vacuum.parm7" "vacuum.rst7"
+savepdb s "vacuum.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting flex
+Computing flexible ligand residues from vacuum.rst7
+** Finished with flex
+
+Writing perturbation file MORPH.pert...
+
+
+impropers:
+Impropers in the final topology that haven't been mapped to the initial topology
+[]
+Impropers in the initial topology that haven't been mapped to the morph
+[]
+** Finished with setup
+
+
+** Starting create_coords
+Using /home/steboss/projects/reproducibility/neopentane_issue/_ligands/ethane/md00004.rst7 for coordinate file creation
+
+** Starting create_top
+Executing command:
+/home/steboss/Software/amber14/bin/tleap -f - <<_EOF 
+source leaprc.ff14SB
+
+source leaprc.gaff
+loadAmberParams frcmod.ionsjc_tip3p
+loadAmberParams frcmod.ionslrcm_hfe_tip3p
+
+
+mods = loadAmberParams "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/ethane~methane/MORPH.frcmod"
+l = loadmol2 "/home/steboss/projects/reproducibility/neopentane_issue/_perturbations/sire/ethane~methane/_ligands/MORPH.mol2"
+p = loadpdb "ligand_removed.pdb"
+s = combine { l p }
+
+set default nocenter on
+setBox s centers { 14.1449704 14.09797705 13.83613575 }
+saveAmberParm s "solvated.parm7" "solvated.rst7"
+savepdb s "solvated.pdb"
+quit
+
+_EOF
+
+** Finished with create_top
+
+
+** Starting flex
+Computing flexible ligand residues from solvated.rst7
+** Finished with flex
+
+** Finished with create_coords
+
+Entering /home/steboss/projects/reproducibility/neopentane_issue
+
+
+====== END ====== 2016-04-27 11:55:14.787278 ====== END ======
+

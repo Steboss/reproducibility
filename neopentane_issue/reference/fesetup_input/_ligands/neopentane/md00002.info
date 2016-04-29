@@ -1,0 +1,22 @@
+
+ NSTEP =     1000   TIME(PS) =       2.000  TEMP(K) =   159.50  PRESS =     0.0
+ Etot   =     -8196.7511  EKtot   =       832.5124  EPtot      =     -9029.2634
+ BOND   =         0.7805  ANGLE   =         1.1303  DIHED      =         0.0217
+ 1-4 NB =         1.9628  1-4 EEL =        -9.5315  VDWAALS    =      1661.0034
+ EELEC  =    -10685.2805  EHBOND  =         0.0000  RESTRAINT  =         0.6498
+ EAMBER (non-restraint)  =     -9029.9132
+ Ewald error estimate:   0.1814E-03
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
+
+| Final Performance Info:
+| -----------------------------------------------------
+| Average timings for last     100 steps:
+|     Elapsed(s) =       4.82 Per Step(ms) =      48.24
+|         ns/day =       3.58   seconds/ns =   24120.42
+|
+| Average timings for all steps:
+|     Elapsed(s) =      47.57 Per Step(ms) =      47.57
+|         ns/day =       3.63   seconds/ns =   23786.31
+| -----------------------------------------------------
+

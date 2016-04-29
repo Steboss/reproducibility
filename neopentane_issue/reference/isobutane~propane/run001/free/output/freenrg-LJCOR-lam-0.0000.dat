@@ -1,0 +1,247 @@
+
+Loading configuration information from file ../../input/sim.cfg
+
+ 
+Running a somd-lj-tailcorrection calculation using files ../../input/SYSTEM.top, ../../input/SYSTEM.crd, ../../input/MORPH.pert and traj000000001.dcd.
+Namespace(author=False, bulk_rho='1.00 * gram / (centimeter*centimeter*centimeter)', config='../../input/sim.cfg', coordinate_file=None, help_config=False, lambda_val='0.00', morph_file=None, step='20', topology_file=None, traj_file='traj000000001.dcd', version=False)
+Using parameters:
+===============
+andersen == True
+barostat == True
+buffered coordinates frequency == 500
+bulk_rho == 0.602214 M L-3
+center solute == True
+constraint == allbonds
+crdfile == ../../input/SYSTEM.crd
+cutoff distance == 10 angstrom
+cutoff type == cutoffperiodic
+energy frequency == 100
+equilibrate == False
+equilibration iterations == 5000
+lambda array == (0.0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625, 0.625, 0.6875, 0.75, 0.8125, 0.875, 0.9375, 1.0)
+lambda_val == 0.0
+minimal coordinate saving == True
+minimise == True
+morphfile == ../../input/MORPH.pert
+ncycles == 100
+nmoves == 10000
+precision == mixed
+save coordinates == True
+step_frame == 20
+topfile == ../../input/SYSTEM.top
+trajfile == traj000000001.dcd
+===============
+
+### Running LJ tail correction calculation on node001 ###
+lambda is 0.0
+Create the System...
+Selecting dummy groups
+Creating force fields... 
+13.7692 angstrom
+Creating force fields... 
+3.15075 angstrom 0.152 kcal mol-1
+0 angstrom 0 kcal mol-1
+0 angstrom 0 kcal mol-1
+3.15075 angstrom 0.152 kcal mol-1 1
+Processing frame 1 
+CURRENT POSITION 1 
+Processing frame 21 
+CURRENT POSITION 21 
+Processing frame 41 
+CURRENT POSITION 41 
+Processing frame 61 
+CURRENT POSITION 61 
+Processing frame 81 
+CURRENT POSITION 81 
+Processing frame 101 
+CURRENT POSITION 101 
+Processing frame 121 
+CURRENT POSITION 121 
+Processing frame 141 
+CURRENT POSITION 141 
+Processing frame 161 
+CURRENT POSITION 161 
+Processing frame 181 
+CURRENT POSITION 181 
+Processing frame 201 
+CURRENT POSITION 201 
+Processing frame 221 
+CURRENT POSITION 221 
+Processing frame 241 
+CURRENT POSITION 241 
+Processing frame 261 
+CURRENT POSITION 261 
+Processing frame 281 
+CURRENT POSITION 281 
+Processing frame 301 
+CURRENT POSITION 301 
+Processing frame 321 
+CURRENT POSITION 321 
+Processing frame 341 
+CURRENT POSITION 341 
+Processing frame 361 
+CURRENT POSITION 361 
+Processing frame 381 
+CURRENT POSITION 381 
+Processing frame 401 
+CURRENT POSITION 401 
+Processing frame 421 
+CURRENT POSITION 421 
+Processing frame 441 
+CURRENT POSITION 441 
+Processing frame 461 
+CURRENT POSITION 461 
+Processing frame 481 
+CURRENT POSITION 481 
+Processing frame 501 
+CURRENT POSITION 501 
+Processing frame 521 
+CURRENT POSITION 521 
+Processing frame 541 
+CURRENT POSITION 541 
+Processing frame 561 
+CURRENT POSITION 561 
+Processing frame 581 
+CURRENT POSITION 581 
+Processing frame 601 
+CURRENT POSITION 601 
+Processing frame 621 
+CURRENT POSITION 621 
+Processing frame 641 
+CURRENT POSITION 641 
+Processing frame 661 
+CURRENT POSITION 661 
+Processing frame 681 
+CURRENT POSITION 681 
+Processing frame 701 
+CURRENT POSITION 701 
+Processing frame 721 
+CURRENT POSITION 721 
+Processing frame 741 
+CURRENT POSITION 741 
+Processing frame 761 
+CURRENT POSITION 761 
+Processing frame 781 
+CURRENT POSITION 781 
+Processing frame 801 
+CURRENT POSITION 801 
+Processing frame 821 
+CURRENT POSITION 821 
+Processing frame 841 
+CURRENT POSITION 841 
+Processing frame 861 
+CURRENT POSITION 861 
+Processing frame 881 
+CURRENT POSITION 881 
+Processing frame 901 
+CURRENT POSITION 901 
+Processing frame 921 
+CURRENT POSITION 921 
+Processing frame 941 
+CURRENT POSITION 941 
+Processing frame 961 
+CURRENT POSITION 961 
+Processing frame 981 
+CURRENT POSITION 981 
+Processing frame 1001 
+CURRENT POSITION 1001 
+Processing frame 1021 
+CURRENT POSITION 1021 
+Processing frame 1041 
+CURRENT POSITION 1041 
+Processing frame 1061 
+CURRENT POSITION 1061 
+Processing frame 1081 
+CURRENT POSITION 1081 
+Processing frame 1101 
+CURRENT POSITION 1101 
+Processing frame 1121 
+CURRENT POSITION 1121 
+Processing frame 1141 
+CURRENT POSITION 1141 
+Processing frame 1161 
+CURRENT POSITION 1161 
+Processing frame 1181 
+CURRENT POSITION 1181 
+Processing frame 1201 
+CURRENT POSITION 1201 
+Processing frame 1221 
+CURRENT POSITION 1221 
+Processing frame 1241 
+CURRENT POSITION 1241 
+Processing frame 1261 
+CURRENT POSITION 1261 
+Processing frame 1281 
+CURRENT POSITION 1281 
+Processing frame 1301 
+CURRENT POSITION 1301 
+Processing frame 1321 
+CURRENT POSITION 1321 
+Processing frame 1341 
+CURRENT POSITION 1341 
+Processing frame 1361 
+CURRENT POSITION 1361 
+Processing frame 1381 
+CURRENT POSITION 1381 
+Processing frame 1401 
+CURRENT POSITION 1401 
+Processing frame 1421 
+CURRENT POSITION 1421 
+Processing frame 1441 
+CURRENT POSITION 1441 
+Processing frame 1461 
+CURRENT POSITION 1461 
+Processing frame 1481 
+CURRENT POSITION 1481 
+Processing frame 1501 
+CURRENT POSITION 1501 
+Processing frame 1521 
+CURRENT POSITION 1521 
+Processing frame 1541 
+CURRENT POSITION 1541 
+Processing frame 1561 
+CURRENT POSITION 1561 
+Processing frame 1581 
+CURRENT POSITION 1581 
+Processing frame 1601 
+CURRENT POSITION 1601 
+Processing frame 1621 
+CURRENT POSITION 1621 
+Processing frame 1641 
+CURRENT POSITION 1641 
+Processing frame 1661 
+CURRENT POSITION 1661 
+Processing frame 1681 
+CURRENT POSITION 1681 
+Processing frame 1701 
+CURRENT POSITION 1701 
+Processing frame 1721 
+CURRENT POSITION 1721 
+Processing frame 1741 
+CURRENT POSITION 1741 
+Processing frame 1761 
+CURRENT POSITION 1761 
+Processing frame 1781 
+CURRENT POSITION 1781 
+Processing frame 1801 
+CURRENT POSITION 1801 
+Processing frame 1821 
+CURRENT POSITION 1821 
+Processing frame 1841 
+CURRENT POSITION 1841 
+Processing frame 1861 
+CURRENT POSITION 1861 
+Processing frame 1881 
+CURRENT POSITION 1881 
+Processing frame 1901 
+CURRENT POSITION 1901 
+Processing frame 1921 
+CURRENT POSITION 1921 
+Processing frame 1941 
+CURRENT POSITION 1941 
+Processing frame 1961 
+CURRENT POSITION 1961 
+Processing frame 1981 
+CURRENT POSITION 1981 
+DG_LJ = -29.69817 +/-  0.01532 kcal/mol (1 sigma) 
+Starting /home/julien/sire.app/bin/somd-lj-tailcorrection: number of threads equals 16
