@@ -1,0 +1,64 @@
+[globals]                      # we can omit this if it is the first section
+logfile = setup.log            # the name of the log file
+forcefield = amber, ff14SB, tip3p, hfe # the forcefield to use. First keyword says amber
+                                       # then the particular amberff (for protein if present)
+                                       # then the solvent model (for water if desired)
+                                       # then how to handle divalent ions 
+FE_type = Sire                 # the type of free energy calculation:
+                               # Sire, AMBER/softcore, AMBER
+mdengine = amber, sander       # the program used for minimisation (and MD):
+                               # sander, namd
+
+[ligand]
+basedir = setup                # the directory name where to find the input files
+file.name = solute.pdb         # the name of the pdb file in the subfolders
+# description of all mutations, the names are directory names under the basedir
+# each directory must contain a ligand.pdb file as a valid PDB file, like:
+# smallmols/ethane/ligand.pdb
+# NOTE: your file name should never contain the characters '>' or ':', we
+#       also recommend not to use '_'
+
+morph_pairs = 2methylfurane>methane , methane>2methylfurane
+
+######################################
+# Conformational search parameters
+######################################
+conf_search.numconf = 0   # set to >0 if want to modify input pdb conformation before solvation and equilibration
+conf_search.conj_econv = 1e-06
+conf_search.conj_steps = 250
+conf_search.ffield = mmff94
+conf_search.geomsteps = 5
+conf_search.steep_econv = 0.0001
+conf_search.steep_steps = 100
+#####################################
+# Solvation protocol 
+#####################################
+# If box.type is set to "rectangular" (or "octahedral") a water box will
+# be created and minimisation and MD will be possible.  Comment out or delete
+# the box.type key to avoid this.  In this case the progam set by "minmd" (see
+# above) will never be invoked.
+box.type = rectangular    # create a rectangular water box
+box.length = 12.0         # with a boxlength of 12 Angstrom
+neutralize = yes          # neutralise the box i.e. add counterions if necessary
+min.nsteps = 100          # carry out 100 steps of minimisation
+#####################################
+# Equilibration protocol
+#####################################
+# Heating up period, solutes restrained
+md.heat.T = 300.0
+md.heat.nsteps = 1000
+md.heat.p = 1.0
+md.heat.restr_force = 10.0
+md.heat.restraint = notsolvent
+# Constant temperature, solutes restrained
+md.constT.T = 300.0
+md.constT.nsteps = 4000
+md.constT.p = 1.0
+md.constT.restr_force = 10.0
+md.constT.restraint = notsolvent
+# Constant pressure, unrestrained
+md.press.T = 300.0
+md.press.nsteps = 15000
+md.press.p = 1.0
+#md.press.restr_force = 0.0
+#md.press.restraint = 

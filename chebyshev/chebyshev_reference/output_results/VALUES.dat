@@ -1,0 +1,31 @@
+Different masses All Bonds Equidistant Windows
+2MF Spline:     3.33339 +/-  0.04504
+2MF TI:     3.81239 +/-  0.26345
+MET Spline:    -3.29757 +/-  0.04340
+MET TI:    -2.93457 +/-  0.25635
+Different masses All Bonds Chebyshev equidistant Phi
+2MF Spline:     2.64707 +/-  0.05390
+2MF TI:     2.90107 +/-  0.26237
+MET Spline:    -2.57515 +/-  0.05364
+MET TI:    -2.26015 +/-  0.26254
+Different masses All Bonds Chebyshev not-equidistant Phi
+2MF Spline:     4.31979 +/-  0.06081
+2MF TI:     4.22079 +/-  0.25128
+MET Spline:    -4.09431 +/-  0.05999
+MET TI:    -4.15431 +/-  0.24957
+
+Same masses All Bonds Equidistant Windows
+2MF Spline:     3.44813 +/-  0.04496
+2MF TI:     4.66113 +/-  0.25528
+MET Spline:    -3.49046 +/-  0.04493
+MET TI:    -3.10246 +/-  0.26046
+Same masses All Bonds Chebyshev equidistant Phi
+2MF Spline:     2.92211 +/-  0.05436
+2MF TI:     3.58711 +/-  0.25740
+MET Spline:    -2.80641 +/-  0.05292
+MET TI:    -2.89041 +/-  0.26732
+Same masses All Bonds Chebyshev not-equidistant Phi
+2MF Spline:     4.62944 +/-  0.06052
+2MF TI:     5.79944 +/-  0.25279
+MET Spline:    -4.55077 +/-  0.06012
+MET TI:    -4.90077 +/-  0.24849
