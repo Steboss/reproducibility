@@ -1,0 +1,6 @@
+#Aug 2016 Stefano Bosisio
+
+Usage:
+
+python prepare.py  inputfiles/HC~HH/diff_masses/ inputfiles/HH~HC/diff_masses/
+
