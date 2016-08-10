@@ -1,0 +1,29 @@
+Force field parameters from vacuum.parm7
+MASS
+c3    12.010
+zz     1.008
+hc     1.008
+du     1.008
+
+BOND
+c3-zz      0.000   0.000
+zz-du      0.000   0.000
+hc-hc    337.300   0.740
+
+ANGLE
+c3-zz-du      0.000   0.000
+du-zz-du      0.000   0.000
+zz-c3-hc      0.000   0.000
+hc-c3-hc     39.430  108.350
+
+DIHE
+hc-c3-zz-du    1     0.00000000    0.000   0.0    SCEE=1.2 SCNB=2.0
+
+IMPROPER
+
+NONB
+c3    1.9080   0.1094
+zz    0.0000   0.0000
+hc    1.4870   0.0157
+du    0.0000   0.0000
+

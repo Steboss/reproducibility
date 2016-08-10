@@ -1,0 +1,12 @@
+@<TRIPOS>MOLECULE
+LIG
+2 1 1 0 1
+SMALL
+USER_CHARGES
+@<TRIPOS>ATOM
+       1 C1           0.9650     0.0290    -0.0890 c3            1 LIG        0.000000
+       2 H2           2.0770     0.0290    -0.0890 hc            1 LIG        0.000000
+@<TRIPOS>BOND
+       1        1        2 1
+@<TRIPOS>SUBSTRUCTURE
+       1 LIG             1 RESIDUE    0 **** ROOT      0
