@@ -1,0 +1,12 @@
+#Aug 2016 Stefano Bosisio
+
+To run everything (on the cluster):
+
+bash run1.sh
+
+
+Finally, to analyse all the free energy type:
+
+python analysis.py run00X
+
+where X is the number of the run you want to analyse

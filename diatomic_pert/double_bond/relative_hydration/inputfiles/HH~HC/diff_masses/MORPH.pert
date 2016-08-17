@@ -1,0 +1,20 @@
+version 1
+molecule LIG
+	atom
+		name H1
+		initial_type    hc
+		final_type      c3
+		initial_charge  0.00000
+		final_charge    0.00000
+                initial_LJ      2.64953  0.01570
+                final_LJ        3.39967  0.10940
+	endatom
+	bond
+		atom0   H1
+		atom1   H2
+		initial_force 337.3
+		initial_equil 0.740
+		final_force   337.3
+		final_equil   2.184
+	endbond
+endmolecule

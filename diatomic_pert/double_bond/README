@@ -1,0 +1,11 @@
+#Aug 2016 Stefano Bosisio
+
+Double_bond simulation for the diatomic perturbation:
+
+Here the initial C-H bond is = 2.184 A  and is mapped into H-H  = 0.740 A
+vdW terms are different for C and H
+
+- reference_results: reference results
+
+- relative_hydration: relative free energy of hydration simulation inputfiles
+- absolute_hydration: absolute free energy of hydration inputfiles

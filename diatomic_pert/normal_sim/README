@@ -1,0 +1,9 @@
+#Aug 2016 Stefano Bosisio
+
+Reprodoucibility project
+Folders to run the diatomic perturbation 
+
+- reference_results:  ods file with the results obtained by using MBAR, different masses and all bonds protocol
+
+- relative_hydration: relative free energy of hydration inputfiles
+- absolute_hydration: absolute free energy of hydration inputfiles
