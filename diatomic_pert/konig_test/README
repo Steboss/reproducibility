@@ -1,0 +1,13 @@
+#AUG 2016 Stefano Bosisio
+
+Try to replicate a simualtion as described by konig in ( Konig and Brooks Biochimica et Biophysica Acta 2015, 932-943 ) 
+
+Vacuum only simulations: 
+
+free_varying:  no LJ no charges for HC to HH with and without constraints, free to vary the bond length when dummy, free to vary the k 
+	       amplitude when dummy
+varying_all : no LJ no charges for HC to HH with and without constraints, here the bond length and amplitude k are varying from initial 
+		to final state
+varying_legnth: no LJ no charges for HC to HH with and without constraints, here only the bond legnth are varying
+
+varying_amplitude: here only the amplitude k of the bond 

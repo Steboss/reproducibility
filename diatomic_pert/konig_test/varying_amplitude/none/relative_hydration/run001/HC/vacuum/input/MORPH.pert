@@ -1,0 +1,29 @@
+version 1
+molecule LIG
+	atom
+		name C1
+		initial_type    c3
+		final_type      du
+		initial_charge  0.00000
+		final_charge    0.00000
+		initial_LJ      0.00000  0.00000
+		final_LJ        0.00000  0.00000
+	endatom
+	atom
+		name H2
+		initial_type    hc
+		final_type      du
+		initial_charge  0.00000
+		final_charge    0.00000
+		initial_LJ      0.00000  0.00000
+		final_LJ        0.00000  0.00000
+	endatom
+        bond
+                atom0   C1
+                atom1   H2
+                initial_force 337.3
+                initial_equil 1.092
+                final_force   300.0
+                final_equil   1.092
+        endbond
+endmolecule
