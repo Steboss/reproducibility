@@ -1,0 +1,7 @@
+#SEPT 2016 Stefano Bosisio
+
+Absolute and relative free energy calcualtion for CH to HH in cyclohexane 
+
+1_normal_sim:  C-H 1.092 to H-H 0.74
+2_same_bond_length: C-H  0.74 to H-H 0.74
+3_double_bond_length: C-H 2.180 to H-H 0.74

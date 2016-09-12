@@ -1,0 +1,837 @@
+
+# Writing all output to file mbar.pmf
+We are only eliminating samples from the beginning of the data and are still working with highly correlated data!
+We are only eliminating samples from the beginning of the data and are still working with highly correlated data!
+K (total states) = 17, total samples = 139400
+
+Warning: states 0 and 1 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 2 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 2 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 3 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 3 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 3 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 4 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 4 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 4 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 4 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 5 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 5 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 5 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 5 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 5 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 6 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 6 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 6 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 6 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 6 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 6 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 7 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 7 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 7 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 7 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 7 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 7 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 7 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 8 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 8 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 8 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 8 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 8 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 8 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 8 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 7 and 8 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 9 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 9 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 9 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 9 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 9 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 9 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 9 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 7 and 9 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 8 and 9 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 7 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 8 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 9 and 10 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 7 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 8 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 9 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 10 and 11 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 7 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 8 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 9 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 10 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 11 and 12 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 7 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 8 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 9 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 10 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 11 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 12 and 13 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 7 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 8 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 9 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 10 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 11 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 12 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 13 and 14 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 7 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 8 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 9 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 10 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 11 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 12 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 13 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 14 and 15 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 0 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 1 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 2 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 3 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 4 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 5 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 6 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 7 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 8 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 9 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 10 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 11 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 12 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 13 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 14 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+
+Warning: states 15 and 16 have the same energies on the dataset.
+They are therefore likely to to be the same thermodynamic state.  This can occasionally cause
+numerical problems with computing the covariance of their energy difference, which must be
+identically zero in any case. Consider combining them into a single state.
+
+N_k = 
+[ 8200.  8200.  8200.  8200.  8200.  8200.  8200.  8200.  8200.  8200.
+  8200.  8200.  8200.  8200.  8200.  8200.  8200.]
+There are 17 states with samples.
+Initializing free energies to zero.
+Initial dimensionless free energies with method zeros
+f_k = 
+[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+Final dimensionless free energies
+f_k = 
+[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+MBAR initialization complete.
+Free energy difference estimated with MBAR is: 0.000000 kcal/mol +/- 0.000000 kcal/mol
+Free energy difference estimated with MBAR is: 0.000000 kJ/mol +/- 0.000000 kJ/mol
+Free energy difference estimated with TI is: 0.000000 kcal/mol
+Starting /home/julien/sire.app/bin/analyse_freenrg_mbar: number of threads equals 16
