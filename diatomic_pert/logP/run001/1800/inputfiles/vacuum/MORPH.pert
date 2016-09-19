@@ -1,0 +1,11 @@
+version 1
+molecule LIG
+	bond
+		atom0   C1
+		atom1   H2
+		initial_force 337.3
+		initial_equil 1.800
+		final_force   337.3
+		final_equil   0.740
+	endbond
+endmolecule

@@ -1,0 +1,733 @@
+log started: Mon Sep 19 15:40:42 2016
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/steboss/Software/amber14/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.7, Nov 2013)
+> 
+> loadoff cyclohexane_am1.pff
+Could not open file cyclohexane_am1.pff: not found
+Could not open database: cyclohexane_am1.pff
+> loadoff cyclohexane_am1.off
+Loading library: /home/steboss/Software/amber14/dat/leap/lib/cyclohexane_am1.off
+Loading: CYC
+> loadoff system.off
+Loading library: ./system.off
+Loading: LIG
+> loadamberparams system.frcmod
+Loading parameters: ./system.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Force field parameters from SYSTEM.top
+(UNKNOWN ATOM TYPE: cm)
+(UNKNOWN ATOM TYPE: hm)
+> mol = loadmol system.pdb
+ERROR: syntax error
+
+> mol = loadpdb system.pdb
+Loading PDB file: ./system.pdb
+Enter zPdbReadScan from call depth  0.
+Exit  zPdbReadScan from call depth  0.
+Matching PDB residue names to LEaP variables.
+(Residue 0: LIG, Terminal/last, was not found in name map.)
+  total atoms in file: 2
+> solvatebox mol CYC 20.0 0.75 iso
+Solvent has no box, so preparing by making box including vdw
+(Use 'setBox centers' first if box was pre-equilibrated)
+  Solute vdw bounding box:              4.061 3.070 3.022
+  Total bounding box for atom centers:  44.061 43.070 43.022
+  Solvent unit box:                     6.829 6.247 7.599
+The number of boxes:  x= 7  y= 7  z= 6
+Adding box at: x=0  y=0  z=0
+Center of solvent box is: 20.487000, 18.741006, 18.997500
+Adding box at: x=0  y=0  z=1
+Center of solvent box is: 20.487000, 18.741006, 11.398500
+Adding box at: x=0  y=0  z=2
+Center of solvent box is: 20.487000, 18.741006, 3.799500
+Adding box at: x=0  y=0  z=3
+Center of solvent box is: 20.487000, 18.741006, -3.799500
+Adding box at: x=0  y=0  z=4
+Center of solvent box is: 20.487000, 18.741006, -11.398500
+Adding box at: x=0  y=0  z=5
+Center of solvent box is: 20.487000, 18.741006, -18.997500
+Adding box at: x=0  y=1  z=0
+Center of solvent box is: 20.487000, 12.494004, 18.997500
+Adding box at: x=0  y=1  z=1
+Center of solvent box is: 20.487000, 12.494004, 11.398500
+Adding box at: x=0  y=1  z=2
+Center of solvent box is: 20.487000, 12.494004, 3.799500
+Adding box at: x=0  y=1  z=3
+Center of solvent box is: 20.487000, 12.494004, -3.799500
+Adding box at: x=0  y=1  z=4
+Center of solvent box is: 20.487000, 12.494004, -11.398500
+Adding box at: x=0  y=1  z=5
+Center of solvent box is: 20.487000, 12.494004, -18.997500
+Adding box at: x=0  y=2  z=0
+Center of solvent box is: 20.487000, 6.247002, 18.997500
+Adding box at: x=0  y=2  z=1
+Center of solvent box is: 20.487000, 6.247002, 11.398500
+Adding box at: x=0  y=2  z=2
+Center of solvent box is: 20.487000, 6.247002, 3.799500
+Adding box at: x=0  y=2  z=3
+Center of solvent box is: 20.487000, 6.247002, -3.799500
+Adding box at: x=0  y=2  z=4
+Center of solvent box is: 20.487000, 6.247002, -11.398500
+Adding box at: x=0  y=2  z=5
+Center of solvent box is: 20.487000, 6.247002, -18.997500
+Adding box at: x=0  y=3  z=0
+Center of solvent box is: 20.487000, -0.000000, 18.997500
+Adding box at: x=0  y=3  z=1
+Center of solvent box is: 20.487000, -0.000000, 11.398500
+Adding box at: x=0  y=3  z=2
+Center of solvent box is: 20.487000, -0.000000, 3.799500
+Adding box at: x=0  y=3  z=3
+Center of solvent box is: 20.487000, -0.000000, -3.799500
+Adding box at: x=0  y=3  z=4
+Center of solvent box is: 20.487000, -0.000000, -11.398500
+Adding box at: x=0  y=3  z=5
+Center of solvent box is: 20.487000, -0.000000, -18.997500
+Adding box at: x=0  y=4  z=0
+Center of solvent box is: 20.487000, -6.247002, 18.997500
+Adding box at: x=0  y=4  z=1
+Center of solvent box is: 20.487000, -6.247002, 11.398500
+Adding box at: x=0  y=4  z=2
+Center of solvent box is: 20.487000, -6.247002, 3.799500
+Adding box at: x=0  y=4  z=3
+Center of solvent box is: 20.487000, -6.247002, -3.799500
+Adding box at: x=0  y=4  z=4
+Center of solvent box is: 20.487000, -6.247002, -11.398500
+Adding box at: x=0  y=4  z=5
+Center of solvent box is: 20.487000, -6.247002, -18.997500
+Adding box at: x=0  y=5  z=0
+Center of solvent box is: 20.487000, -12.494004, 18.997500
+Adding box at: x=0  y=5  z=1
+Center of solvent box is: 20.487000, -12.494004, 11.398500
+Adding box at: x=0  y=5  z=2
+Center of solvent box is: 20.487000, -12.494004, 3.799500
+Adding box at: x=0  y=5  z=3
+Center of solvent box is: 20.487000, -12.494004, -3.799500
+Adding box at: x=0  y=5  z=4
+Center of solvent box is: 20.487000, -12.494004, -11.398500
+Adding box at: x=0  y=5  z=5
+Center of solvent box is: 20.487000, -12.494004, -18.997500
+Adding box at: x=0  y=6  z=0
+Center of solvent box is: 20.487000, -18.741006, 18.997500
+Adding box at: x=0  y=6  z=1
+Center of solvent box is: 20.487000, -18.741006, 11.398500
+Adding box at: x=0  y=6  z=2
+Center of solvent box is: 20.487000, -18.741006, 3.799500
+Adding box at: x=0  y=6  z=3
+Center of solvent box is: 20.487000, -18.741006, -3.799500
+Adding box at: x=0  y=6  z=4
+Center of solvent box is: 20.487000, -18.741006, -11.398500
+Adding box at: x=0  y=6  z=5
+Center of solvent box is: 20.487000, -18.741006, -18.997500
+Adding box at: x=1  y=0  z=0
+Center of solvent box is: 13.658000, 18.741006, 18.997500
+Adding box at: x=1  y=0  z=1
+Center of solvent box is: 13.658000, 18.741006, 11.398500
+Adding box at: x=1  y=0  z=2
+Center of solvent box is: 13.658000, 18.741006, 3.799500
+Adding box at: x=1  y=0  z=3
+Center of solvent box is: 13.658000, 18.741006, -3.799500
+Adding box at: x=1  y=0  z=4
+Center of solvent box is: 13.658000, 18.741006, -11.398500
+Adding box at: x=1  y=0  z=5
+Center of solvent box is: 13.658000, 18.741006, -18.997500
+Adding box at: x=1  y=1  z=0
+Center of solvent box is: 13.658000, 12.494004, 18.997500
+Adding box at: x=1  y=1  z=1
+Center of solvent box is: 13.658000, 12.494004, 11.398500
+Adding box at: x=1  y=1  z=2
+Center of solvent box is: 13.658000, 12.494004, 3.799500
+Adding box at: x=1  y=1  z=3
+Center of solvent box is: 13.658000, 12.494004, -3.799500
+Adding box at: x=1  y=1  z=4
+Center of solvent box is: 13.658000, 12.494004, -11.398500
+Adding box at: x=1  y=1  z=5
+Center of solvent box is: 13.658000, 12.494004, -18.997500
+Adding box at: x=1  y=2  z=0
+Center of solvent box is: 13.658000, 6.247002, 18.997500
+Adding box at: x=1  y=2  z=1
+Center of solvent box is: 13.658000, 6.247002, 11.398500
+Adding box at: x=1  y=2  z=2
+Center of solvent box is: 13.658000, 6.247002, 3.799500
+Adding box at: x=1  y=2  z=3
+Center of solvent box is: 13.658000, 6.247002, -3.799500
+Adding box at: x=1  y=2  z=4
+Center of solvent box is: 13.658000, 6.247002, -11.398500
+Adding box at: x=1  y=2  z=5
+Center of solvent box is: 13.658000, 6.247002, -18.997500
+Adding box at: x=1  y=3  z=0
+Center of solvent box is: 13.658000, -0.000000, 18.997500
+Adding box at: x=1  y=3  z=1
+Center of solvent box is: 13.658000, -0.000000, 11.398500
+Adding box at: x=1  y=3  z=2
+Center of solvent box is: 13.658000, -0.000000, 3.799500
+Adding box at: x=1  y=3  z=3
+Center of solvent box is: 13.658000, -0.000000, -3.799500
+Adding box at: x=1  y=3  z=4
+Center of solvent box is: 13.658000, -0.000000, -11.398500
+Adding box at: x=1  y=3  z=5
+Center of solvent box is: 13.658000, -0.000000, -18.997500
+Adding box at: x=1  y=4  z=0
+Center of solvent box is: 13.658000, -6.247002, 18.997500
+Adding box at: x=1  y=4  z=1
+Center of solvent box is: 13.658000, -6.247002, 11.398500
+Adding box at: x=1  y=4  z=2
+Center of solvent box is: 13.658000, -6.247002, 3.799500
+Adding box at: x=1  y=4  z=3
+Center of solvent box is: 13.658000, -6.247002, -3.799500
+Adding box at: x=1  y=4  z=4
+Center of solvent box is: 13.658000, -6.247002, -11.398500
+Adding box at: x=1  y=4  z=5
+Center of solvent box is: 13.658000, -6.247002, -18.997500
+Adding box at: x=1  y=5  z=0
+Center of solvent box is: 13.658000, -12.494004, 18.997500
+Adding box at: x=1  y=5  z=1
+Center of solvent box is: 13.658000, -12.494004, 11.398500
+Adding box at: x=1  y=5  z=2
+Center of solvent box is: 13.658000, -12.494004, 3.799500
+Adding box at: x=1  y=5  z=3
+Center of solvent box is: 13.658000, -12.494004, -3.799500
+Adding box at: x=1  y=5  z=4
+Center of solvent box is: 13.658000, -12.494004, -11.398500
+Adding box at: x=1  y=5  z=5
+Center of solvent box is: 13.658000, -12.494004, -18.997500
+Adding box at: x=1  y=6  z=0
+Center of solvent box is: 13.658000, -18.741006, 18.997500
+Adding box at: x=1  y=6  z=1
+Center of solvent box is: 13.658000, -18.741006, 11.398500
+Adding box at: x=1  y=6  z=2
+Center of solvent box is: 13.658000, -18.741006, 3.799500
+Adding box at: x=1  y=6  z=3
+Center of solvent box is: 13.658000, -18.741006, -3.799500
+Adding box at: x=1  y=6  z=4
+Center of solvent box is: 13.658000, -18.741006, -11.398500
+Adding box at: x=1  y=6  z=5
+Center of solvent box is: 13.658000, -18.741006, -18.997500
+Adding box at: x=2  y=0  z=0
+Center of solvent box is: 6.829000, 18.741006, 18.997500
+Adding box at: x=2  y=0  z=1
+Center of solvent box is: 6.829000, 18.741006, 11.398500
+Adding box at: x=2  y=0  z=2
+Center of solvent box is: 6.829000, 18.741006, 3.799500
+Adding box at: x=2  y=0  z=3
+Center of solvent box is: 6.829000, 18.741006, -3.799500
+Adding box at: x=2  y=0  z=4
+Center of solvent box is: 6.829000, 18.741006, -11.398500
+Adding box at: x=2  y=0  z=5
+Center of solvent box is: 6.829000, 18.741006, -18.997500
+Adding box at: x=2  y=1  z=0
+Center of solvent box is: 6.829000, 12.494004, 18.997500
+Adding box at: x=2  y=1  z=1
+Center of solvent box is: 6.829000, 12.494004, 11.398500
+Adding box at: x=2  y=1  z=2
+Center of solvent box is: 6.829000, 12.494004, 3.799500
+Adding box at: x=2  y=1  z=3
+Center of solvent box is: 6.829000, 12.494004, -3.799500
+Adding box at: x=2  y=1  z=4
+Center of solvent box is: 6.829000, 12.494004, -11.398500
+Adding box at: x=2  y=1  z=5
+Center of solvent box is: 6.829000, 12.494004, -18.997500
+Adding box at: x=2  y=2  z=0
+Center of solvent box is: 6.829000, 6.247002, 18.997500
+Adding box at: x=2  y=2  z=1
+Center of solvent box is: 6.829000, 6.247002, 11.398500
+Adding box at: x=2  y=2  z=2
+Center of solvent box is: 6.829000, 6.247002, 3.799500
+Adding box at: x=2  y=2  z=3
+Center of solvent box is: 6.829000, 6.247002, -3.799500
+Adding box at: x=2  y=2  z=4
+Center of solvent box is: 6.829000, 6.247002, -11.398500
+Adding box at: x=2  y=2  z=5
+Center of solvent box is: 6.829000, 6.247002, -18.997500
+Adding box at: x=2  y=3  z=0
+Center of solvent box is: 6.829000, -0.000000, 18.997500
+Adding box at: x=2  y=3  z=1
+Center of solvent box is: 6.829000, -0.000000, 11.398500
+Adding box at: x=2  y=3  z=2
+Center of solvent box is: 6.829000, -0.000000, 3.799500
+Adding box at: x=2  y=3  z=3
+Center of solvent box is: 6.829000, -0.000000, -3.799500
+Adding box at: x=2  y=3  z=4
+Center of solvent box is: 6.829000, -0.000000, -11.398500
+Adding box at: x=2  y=3  z=5
+Center of solvent box is: 6.829000, -0.000000, -18.997500
+Adding box at: x=2  y=4  z=0
+Center of solvent box is: 6.829000, -6.247002, 18.997500
+Adding box at: x=2  y=4  z=1
+Center of solvent box is: 6.829000, -6.247002, 11.398500
+Adding box at: x=2  y=4  z=2
+Center of solvent box is: 6.829000, -6.247002, 3.799500
+Adding box at: x=2  y=4  z=3
+Center of solvent box is: 6.829000, -6.247002, -3.799500
+Adding box at: x=2  y=4  z=4
+Center of solvent box is: 6.829000, -6.247002, -11.398500
+Adding box at: x=2  y=4  z=5
+Center of solvent box is: 6.829000, -6.247002, -18.997500
+Adding box at: x=2  y=5  z=0
+Center of solvent box is: 6.829000, -12.494004, 18.997500
+Adding box at: x=2  y=5  z=1
+Center of solvent box is: 6.829000, -12.494004, 11.398500
+Adding box at: x=2  y=5  z=2
+Center of solvent box is: 6.829000, -12.494004, 3.799500
+Adding box at: x=2  y=5  z=3
+Center of solvent box is: 6.829000, -12.494004, -3.799500
+Adding box at: x=2  y=5  z=4
+Center of solvent box is: 6.829000, -12.494004, -11.398500
+Adding box at: x=2  y=5  z=5
+Center of solvent box is: 6.829000, -12.494004, -18.997500
+Adding box at: x=2  y=6  z=0
+Center of solvent box is: 6.829000, -18.741006, 18.997500
+Adding box at: x=2  y=6  z=1
+Center of solvent box is: 6.829000, -18.741006, 11.398500
+Adding box at: x=2  y=6  z=2
+Center of solvent box is: 6.829000, -18.741006, 3.799500
+Adding box at: x=2  y=6  z=3
+Center of solvent box is: 6.829000, -18.741006, -3.799500
+Adding box at: x=2  y=6  z=4
+Center of solvent box is: 6.829000, -18.741006, -11.398500
+Adding box at: x=2  y=6  z=5
+Center of solvent box is: 6.829000, -18.741006, -18.997500
+Adding box at: x=3  y=0  z=0
+Center of solvent box is: -0.000000, 18.741006, 18.997500
+Adding box at: x=3  y=0  z=1
+Center of solvent box is: -0.000000, 18.741006, 11.398500
+Adding box at: x=3  y=0  z=2
+Center of solvent box is: -0.000000, 18.741006, 3.799500
+Adding box at: x=3  y=0  z=3
+Center of solvent box is: -0.000000, 18.741006, -3.799500
+Adding box at: x=3  y=0  z=4
+Center of solvent box is: -0.000000, 18.741006, -11.398500
+Adding box at: x=3  y=0  z=5
+Center of solvent box is: -0.000000, 18.741006, -18.997500
+Adding box at: x=3  y=1  z=0
+Center of solvent box is: -0.000000, 12.494004, 18.997500
+Adding box at: x=3  y=1  z=1
+Center of solvent box is: -0.000000, 12.494004, 11.398500
+Adding box at: x=3  y=1  z=2
+Center of solvent box is: -0.000000, 12.494004, 3.799500
+Adding box at: x=3  y=1  z=3
+Center of solvent box is: -0.000000, 12.494004, -3.799500
+Adding box at: x=3  y=1  z=4
+Center of solvent box is: -0.000000, 12.494004, -11.398500
+Adding box at: x=3  y=1  z=5
+Center of solvent box is: -0.000000, 12.494004, -18.997500
+Adding box at: x=3  y=2  z=0
+Center of solvent box is: -0.000000, 6.247002, 18.997500
+Adding box at: x=3  y=2  z=1
+Center of solvent box is: -0.000000, 6.247002, 11.398500
+Adding box at: x=3  y=2  z=2
+Center of solvent box is: -0.000000, 6.247002, 3.799500
+Adding box at: x=3  y=2  z=3
+Center of solvent box is: -0.000000, 6.247002, -3.799500
+Adding box at: x=3  y=2  z=4
+Center of solvent box is: -0.000000, 6.247002, -11.398500
+Adding box at: x=3  y=2  z=5
+Center of solvent box is: -0.000000, 6.247002, -18.997500
+Adding box at: x=3  y=3  z=0
+Center of solvent box is: -0.000000, -0.000000, 18.997500
+Adding box at: x=3  y=3  z=1
+Center of solvent box is: -0.000000, -0.000000, 11.398500
+Adding box at: x=3  y=3  z=2
+Center of solvent box is: -0.000000, -0.000000, 3.799500
+Adding box at: x=3  y=3  z=3
+Center of solvent box is: -0.000000, -0.000000, -3.799500
+Adding box at: x=3  y=3  z=4
+Center of solvent box is: -0.000000, -0.000000, -11.398500
+Adding box at: x=3  y=3  z=5
+Center of solvent box is: -0.000000, -0.000000, -18.997500
+Adding box at: x=3  y=4  z=0
+Center of solvent box is: -0.000000, -6.247002, 18.997500
+Adding box at: x=3  y=4  z=1
+Center of solvent box is: -0.000000, -6.247002, 11.398500
+Adding box at: x=3  y=4  z=2
+Center of solvent box is: -0.000000, -6.247002, 3.799500
+Adding box at: x=3  y=4  z=3
+Center of solvent box is: -0.000000, -6.247002, -3.799500
+Adding box at: x=3  y=4  z=4
+Center of solvent box is: -0.000000, -6.247002, -11.398500
+Adding box at: x=3  y=4  z=5
+Center of solvent box is: -0.000000, -6.247002, -18.997500
+Adding box at: x=3  y=5  z=0
+Center of solvent box is: -0.000000, -12.494004, 18.997500
+Adding box at: x=3  y=5  z=1
+Center of solvent box is: -0.000000, -12.494004, 11.398500
+Adding box at: x=3  y=5  z=2
+Center of solvent box is: -0.000000, -12.494004, 3.799500
+Adding box at: x=3  y=5  z=3
+Center of solvent box is: -0.000000, -12.494004, -3.799500
+Adding box at: x=3  y=5  z=4
+Center of solvent box is: -0.000000, -12.494004, -11.398500
+Adding box at: x=3  y=5  z=5
+Center of solvent box is: -0.000000, -12.494004, -18.997500
+Adding box at: x=3  y=6  z=0
+Center of solvent box is: -0.000000, -18.741006, 18.997500
+Adding box at: x=3  y=6  z=1
+Center of solvent box is: -0.000000, -18.741006, 11.398500
+Adding box at: x=3  y=6  z=2
+Center of solvent box is: -0.000000, -18.741006, 3.799500
+Adding box at: x=3  y=6  z=3
+Center of solvent box is: -0.000000, -18.741006, -3.799500
+Adding box at: x=3  y=6  z=4
+Center of solvent box is: -0.000000, -18.741006, -11.398500
+Adding box at: x=3  y=6  z=5
+Center of solvent box is: -0.000000, -18.741006, -18.997500
+Adding box at: x=4  y=0  z=0
+Center of solvent box is: -6.829000, 18.741006, 18.997500
+Adding box at: x=4  y=0  z=1
+Center of solvent box is: -6.829000, 18.741006, 11.398500
+Adding box at: x=4  y=0  z=2
+Center of solvent box is: -6.829000, 18.741006, 3.799500
+Adding box at: x=4  y=0  z=3
+Center of solvent box is: -6.829000, 18.741006, -3.799500
+Adding box at: x=4  y=0  z=4
+Center of solvent box is: -6.829000, 18.741006, -11.398500
+Adding box at: x=4  y=0  z=5
+Center of solvent box is: -6.829000, 18.741006, -18.997500
+Adding box at: x=4  y=1  z=0
+Center of solvent box is: -6.829000, 12.494004, 18.997500
+Adding box at: x=4  y=1  z=1
+Center of solvent box is: -6.829000, 12.494004, 11.398500
+Adding box at: x=4  y=1  z=2
+Center of solvent box is: -6.829000, 12.494004, 3.799500
+Adding box at: x=4  y=1  z=3
+Center of solvent box is: -6.829000, 12.494004, -3.799500
+Adding box at: x=4  y=1  z=4
+Center of solvent box is: -6.829000, 12.494004, -11.398500
+Adding box at: x=4  y=1  z=5
+Center of solvent box is: -6.829000, 12.494004, -18.997500
+Adding box at: x=4  y=2  z=0
+Center of solvent box is: -6.829000, 6.247002, 18.997500
+Adding box at: x=4  y=2  z=1
+Center of solvent box is: -6.829000, 6.247002, 11.398500
+Adding box at: x=4  y=2  z=2
+Center of solvent box is: -6.829000, 6.247002, 3.799500
+Adding box at: x=4  y=2  z=3
+Center of solvent box is: -6.829000, 6.247002, -3.799500
+Adding box at: x=4  y=2  z=4
+Center of solvent box is: -6.829000, 6.247002, -11.398500
+Adding box at: x=4  y=2  z=5
+Center of solvent box is: -6.829000, 6.247002, -18.997500
+Adding box at: x=4  y=3  z=0
+Center of solvent box is: -6.829000, -0.000000, 18.997500
+Adding box at: x=4  y=3  z=1
+Center of solvent box is: -6.829000, -0.000000, 11.398500
+Adding box at: x=4  y=3  z=2
+Center of solvent box is: -6.829000, -0.000000, 3.799500
+Adding box at: x=4  y=3  z=3
+Center of solvent box is: -6.829000, -0.000000, -3.799500
+Adding box at: x=4  y=3  z=4
+Center of solvent box is: -6.829000, -0.000000, -11.398500
+Adding box at: x=4  y=3  z=5
+Center of solvent box is: -6.829000, -0.000000, -18.997500
+Adding box at: x=4  y=4  z=0
+Center of solvent box is: -6.829000, -6.247002, 18.997500
+Adding box at: x=4  y=4  z=1
+Center of solvent box is: -6.829000, -6.247002, 11.398500
+Adding box at: x=4  y=4  z=2
+Center of solvent box is: -6.829000, -6.247002, 3.799500
+Adding box at: x=4  y=4  z=3
+Center of solvent box is: -6.829000, -6.247002, -3.799500
+Adding box at: x=4  y=4  z=4
+Center of solvent box is: -6.829000, -6.247002, -11.398500
+Adding box at: x=4  y=4  z=5
+Center of solvent box is: -6.829000, -6.247002, -18.997500
+Adding box at: x=4  y=5  z=0
+Center of solvent box is: -6.829000, -12.494004, 18.997500
+Adding box at: x=4  y=5  z=1
+Center of solvent box is: -6.829000, -12.494004, 11.398500
+Adding box at: x=4  y=5  z=2
+Center of solvent box is: -6.829000, -12.494004, 3.799500
+Adding box at: x=4  y=5  z=3
+Center of solvent box is: -6.829000, -12.494004, -3.799500
+Adding box at: x=4  y=5  z=4
+Center of solvent box is: -6.829000, -12.494004, -11.398500
+Adding box at: x=4  y=5  z=5
+Center of solvent box is: -6.829000, -12.494004, -18.997500
+Adding box at: x=4  y=6  z=0
+Center of solvent box is: -6.829000, -18.741006, 18.997500
+Adding box at: x=4  y=6  z=1
+Center of solvent box is: -6.829000, -18.741006, 11.398500
+Adding box at: x=4  y=6  z=2
+Center of solvent box is: -6.829000, -18.741006, 3.799500
+Adding box at: x=4  y=6  z=3
+Center of solvent box is: -6.829000, -18.741006, -3.799500
+Adding box at: x=4  y=6  z=4
+Center of solvent box is: -6.829000, -18.741006, -11.398500
+Adding box at: x=4  y=6  z=5
+Center of solvent box is: -6.829000, -18.741006, -18.997500
+Adding box at: x=5  y=0  z=0
+Center of solvent box is: -13.658000, 18.741006, 18.997500
+Adding box at: x=5  y=0  z=1
+Center of solvent box is: -13.658000, 18.741006, 11.398500
+Adding box at: x=5  y=0  z=2
+Center of solvent box is: -13.658000, 18.741006, 3.799500
+Adding box at: x=5  y=0  z=3
+Center of solvent box is: -13.658000, 18.741006, -3.799500
+Adding box at: x=5  y=0  z=4
+Center of solvent box is: -13.658000, 18.741006, -11.398500
+Adding box at: x=5  y=0  z=5
+Center of solvent box is: -13.658000, 18.741006, -18.997500
+Adding box at: x=5  y=1  z=0
+Center of solvent box is: -13.658000, 12.494004, 18.997500
+Adding box at: x=5  y=1  z=1
+Center of solvent box is: -13.658000, 12.494004, 11.398500
+Adding box at: x=5  y=1  z=2
+Center of solvent box is: -13.658000, 12.494004, 3.799500
+Adding box at: x=5  y=1  z=3
+Center of solvent box is: -13.658000, 12.494004, -3.799500
+Adding box at: x=5  y=1  z=4
+Center of solvent box is: -13.658000, 12.494004, -11.398500
+Adding box at: x=5  y=1  z=5
+Center of solvent box is: -13.658000, 12.494004, -18.997500
+Adding box at: x=5  y=2  z=0
+Center of solvent box is: -13.658000, 6.247002, 18.997500
+Adding box at: x=5  y=2  z=1
+Center of solvent box is: -13.658000, 6.247002, 11.398500
+Adding box at: x=5  y=2  z=2
+Center of solvent box is: -13.658000, 6.247002, 3.799500
+Adding box at: x=5  y=2  z=3
+Center of solvent box is: -13.658000, 6.247002, -3.799500
+Adding box at: x=5  y=2  z=4
+Center of solvent box is: -13.658000, 6.247002, -11.398500
+Adding box at: x=5  y=2  z=5
+Center of solvent box is: -13.658000, 6.247002, -18.997500
+Adding box at: x=5  y=3  z=0
+Center of solvent box is: -13.658000, -0.000000, 18.997500
+Adding box at: x=5  y=3  z=1
+Center of solvent box is: -13.658000, -0.000000, 11.398500
+Adding box at: x=5  y=3  z=2
+Center of solvent box is: -13.658000, -0.000000, 3.799500
+Adding box at: x=5  y=3  z=3
+Center of solvent box is: -13.658000, -0.000000, -3.799500
+Adding box at: x=5  y=3  z=4
+Center of solvent box is: -13.658000, -0.000000, -11.398500
+Adding box at: x=5  y=3  z=5
+Center of solvent box is: -13.658000, -0.000000, -18.997500
+Adding box at: x=5  y=4  z=0
+Center of solvent box is: -13.658000, -6.247002, 18.997500
+Adding box at: x=5  y=4  z=1
+Center of solvent box is: -13.658000, -6.247002, 11.398500
+Adding box at: x=5  y=4  z=2
+Center of solvent box is: -13.658000, -6.247002, 3.799500
+Adding box at: x=5  y=4  z=3
+Center of solvent box is: -13.658000, -6.247002, -3.799500
+Adding box at: x=5  y=4  z=4
+Center of solvent box is: -13.658000, -6.247002, -11.398500
+Adding box at: x=5  y=4  z=5
+Center of solvent box is: -13.658000, -6.247002, -18.997500
+Adding box at: x=5  y=5  z=0
+Center of solvent box is: -13.658000, -12.494004, 18.997500
+Adding box at: x=5  y=5  z=1
+Center of solvent box is: -13.658000, -12.494004, 11.398500
+Adding box at: x=5  y=5  z=2
+Center of solvent box is: -13.658000, -12.494004, 3.799500
+Adding box at: x=5  y=5  z=3
+Center of solvent box is: -13.658000, -12.494004, -3.799500
+Adding box at: x=5  y=5  z=4
+Center of solvent box is: -13.658000, -12.494004, -11.398500
+Adding box at: x=5  y=5  z=5
+Center of solvent box is: -13.658000, -12.494004, -18.997500
+Adding box at: x=5  y=6  z=0
+Center of solvent box is: -13.658000, -18.741006, 18.997500
+Adding box at: x=5  y=6  z=1
+Center of solvent box is: -13.658000, -18.741006, 11.398500
+Adding box at: x=5  y=6  z=2
+Center of solvent box is: -13.658000, -18.741006, 3.799500
+Adding box at: x=5  y=6  z=3
+Center of solvent box is: -13.658000, -18.741006, -3.799500
+Adding box at: x=5  y=6  z=4
+Center of solvent box is: -13.658000, -18.741006, -11.398500
+Adding box at: x=5  y=6  z=5
+Center of solvent box is: -13.658000, -18.741006, -18.997500
+Adding box at: x=6  y=0  z=0
+Center of solvent box is: -20.487000, 18.741006, 18.997500
+Adding box at: x=6  y=0  z=1
+Center of solvent box is: -20.487000, 18.741006, 11.398500
+Adding box at: x=6  y=0  z=2
+Center of solvent box is: -20.487000, 18.741006, 3.799500
+Adding box at: x=6  y=0  z=3
+Center of solvent box is: -20.487000, 18.741006, -3.799500
+Adding box at: x=6  y=0  z=4
+Center of solvent box is: -20.487000, 18.741006, -11.398500
+Adding box at: x=6  y=0  z=5
+Center of solvent box is: -20.487000, 18.741006, -18.997500
+Adding box at: x=6  y=1  z=0
+Center of solvent box is: -20.487000, 12.494004, 18.997500
+Adding box at: x=6  y=1  z=1
+Center of solvent box is: -20.487000, 12.494004, 11.398500
+Adding box at: x=6  y=1  z=2
+Center of solvent box is: -20.487000, 12.494004, 3.799500
+Adding box at: x=6  y=1  z=3
+Center of solvent box is: -20.487000, 12.494004, -3.799500
+Adding box at: x=6  y=1  z=4
+Center of solvent box is: -20.487000, 12.494004, -11.398500
+Adding box at: x=6  y=1  z=5
+Center of solvent box is: -20.487000, 12.494004, -18.997500
+Adding box at: x=6  y=2  z=0
+Center of solvent box is: -20.487000, 6.247002, 18.997500
+Adding box at: x=6  y=2  z=1
+Center of solvent box is: -20.487000, 6.247002, 11.398500
+Adding box at: x=6  y=2  z=2
+Center of solvent box is: -20.487000, 6.247002, 3.799500
+Adding box at: x=6  y=2  z=3
+Center of solvent box is: -20.487000, 6.247002, -3.799500
+Adding box at: x=6  y=2  z=4
+Center of solvent box is: -20.487000, 6.247002, -11.398500
+Adding box at: x=6  y=2  z=5
+Center of solvent box is: -20.487000, 6.247002, -18.997500
+Adding box at: x=6  y=3  z=0
+Center of solvent box is: -20.487000, -0.000000, 18.997500
+Adding box at: x=6  y=3  z=1
+Center of solvent box is: -20.487000, -0.000000, 11.398500
+Adding box at: x=6  y=3  z=2
+Center of solvent box is: -20.487000, -0.000000, 3.799500
+Adding box at: x=6  y=3  z=3
+Center of solvent box is: -20.487000, -0.000000, -3.799500
+Adding box at: x=6  y=3  z=4
+Center of solvent box is: -20.487000, -0.000000, -11.398500
+Adding box at: x=6  y=3  z=5
+Center of solvent box is: -20.487000, -0.000000, -18.997500
+Adding box at: x=6  y=4  z=0
+Center of solvent box is: -20.487000, -6.247002, 18.997500
+Adding box at: x=6  y=4  z=1
+Center of solvent box is: -20.487000, -6.247002, 11.398500
+Adding box at: x=6  y=4  z=2
+Center of solvent box is: -20.487000, -6.247002, 3.799500
+Adding box at: x=6  y=4  z=3
+Center of solvent box is: -20.487000, -6.247002, -3.799500
+Adding box at: x=6  y=4  z=4
+Center of solvent box is: -20.487000, -6.247002, -11.398500
+Adding box at: x=6  y=4  z=5
+Center of solvent box is: -20.487000, -6.247002, -18.997500
+Adding box at: x=6  y=5  z=0
+Center of solvent box is: -20.487000, -12.494004, 18.997500
+Adding box at: x=6  y=5  z=1
+Center of solvent box is: -20.487000, -12.494004, 11.398500
+Adding box at: x=6  y=5  z=2
+Center of solvent box is: -20.487000, -12.494004, 3.799500
+Adding box at: x=6  y=5  z=3
+Center of solvent box is: -20.487000, -12.494004, -3.799500
+Adding box at: x=6  y=5  z=4
+Center of solvent box is: -20.487000, -12.494004, -11.398500
+Adding box at: x=6  y=5  z=5
+Center of solvent box is: -20.487000, -12.494004, -18.997500
+Adding box at: x=6  y=6  z=0
+Center of solvent box is: -20.487000, -18.741006, 18.997500
+Adding box at: x=6  y=6  z=1
+Center of solvent box is: -20.487000, -18.741006, 11.398500
+Adding box at: x=6  y=6  z=2
+Center of solvent box is: -20.487000, -18.741006, 3.799500
+Adding box at: x=6  y=6  z=3
+Center of solvent box is: -20.487000, -18.741006, -3.799500
+Adding box at: x=6  y=6  z=4
+Center of solvent box is: -20.487000, -18.741006, -11.398500
+Adding box at: x=6  y=6  z=5
+Center of solvent box is: -20.487000, -18.741006, -18.997500
+  Total vdw box size:                   34.145 43.729 45.594 angstroms.
+  Volume: 68077.641 A^3 
+  Total mass 17517.466 amu,  Density 0.427 g/cc
+  Added 208 residues.
+> saveamberparm mol solvated.parm7 solvated.rst7
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 0 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+ (no restraints)
+> quit
+	Quit

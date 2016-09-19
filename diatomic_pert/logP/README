@@ -1,7 +1,9 @@
 #SEPT 2016 Stefano Bosisio
 
-Absolute and relative free energy calcualtion for CH to HH in cyclohexane 
+Simulation in gas, water and cyclohexane phase of CH to CH modifying the bond length ONLY
 
-1_normal_sim:  C-H 1.092 to H-H 0.74
-2_same_bond_length: C-H  0.74 to H-H 0.74
-3_double_bond_length: C-H 2.180 to H-H 0.74
+C and H have the same LJ terms and 0.00 charges
+the amplitude of C-H bond is 337.3 kcal/molA2  and the bond length varies from 1.092 to 3.0 A
+
+Important: for the simulation in cyclohexane the C and H atom type was changed, in order to avoid 
+misunderstanding between cyclohexane molecules and solute
