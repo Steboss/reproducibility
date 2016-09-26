@@ -1,0 +1,9 @@
+#SEPT 2016 Stefano Bosisio
+
+Simulation in gas, water and cyclohexane phase of CH to CH modifying the bond length ONLY
+
+C and H have the same LJ terms and 0.00 charges
+the amplitude of C-H bond is 337.3 kcal/molA2  and the bond length varies from 1.092 to 3.0 A
+
+Important: for the simulation in cyclohexane the C and H atom type was changed, in order to avoid 
+misunderstanding between cyclohexane molecules and solute

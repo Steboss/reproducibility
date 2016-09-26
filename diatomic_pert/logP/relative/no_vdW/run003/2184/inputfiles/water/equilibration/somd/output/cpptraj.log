@@ -1,0 +1,4 @@
+trajin traj000000001.dcd  100 100 1
+trajout solvated.rst7
+go
+quit

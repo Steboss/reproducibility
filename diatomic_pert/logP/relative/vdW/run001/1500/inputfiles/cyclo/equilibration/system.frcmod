@@ -1,0 +1,18 @@
+Force field parameters from SYSTEM.top
+MASS
+cm    12.010
+hm     1.008
+
+BOND
+cm-hm    337.300   1.092
+
+ANGLE
+
+DIHE
+
+IMPROPER
+
+NONB
+cm    1.4870   0.0157
+hm    1.4870   0.0157
+
