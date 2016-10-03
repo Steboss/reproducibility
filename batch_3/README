@@ -1,0 +1,7 @@
+#Sept 2016 Stefano Bosisio
+
+Reproducibility project
+
+
+Here I am going to re run all the relative free energy calculations (present in batch 2 on my workstation)  WITHOUT CONSTRIANTS
+To check consistency of relative calcualtion also  absolute free enrgy calcualtion will be run
