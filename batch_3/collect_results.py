@@ -1,6 +1,6 @@
 #FEB 2016 Stefano Bosisio
 #Script to analyze in one shot all the reproducibility project molecules
-#Usage: python  collect_results  run_numb ( e.g run001)
+#Usage: python  collect_results  run001/relative  run001.csv    to save the file
 #Output:  csv file with: molecules--free(TI,FUNC_0,FUNC_1,LRC)--vacuum(TI)--
 
 
@@ -18,7 +18,7 @@ def readTI(path):
     except:
         DG_TI = 999.0
         DG_TI_err = 999.0
-    
+
     return float(DG_TI)
 
 
@@ -30,15 +30,16 @@ def readCOULCOR(path):
         FUNC = reader[len(reader)-1].split()[2]
     except:
         FUNC = 999.0
-    
+
     return float(FUNC)
 
 def readLJCOR(path):
 
     ljcor = open(path,"r")
     reader = ljcor.readlines()
-    try: 
-        LJCOR = reader[len(reader)-1].split()[2]
+    #print(reader[len(reader)-2])
+    try:
+        LJCOR = reader[len(reader)-2].split()[2]
     except:
         LJCOR = 999.0
 
@@ -47,10 +48,11 @@ def readLJCOR(path):
 #####
 
 
-run_numb = sys.argv[1]
-path = os.getcwd()
-dirs = [d for d in os.listdir(path) if os.path.isdir(os.path.join(path,d))]
-excluded = ["collect_results.py","inputfiles","methane","neopentane","run001.csv","run002.csv","run003.csv"]
+inputfolder = sys.argv[1]
+#path = os.getcwd()
+#let's go with relative path
+dirs = [d for d in os.listdir(inputfolder) if os.path.isdir(os.path.join(inputfolder,d))]
+excluded = ["analyze_script.sh"]
 
 results = {}
 
@@ -60,58 +62,63 @@ for mol in dirs:
     if mol in excluded:
         continue
     else:
-        print(mol)
-        #path = str(path) + "/" + str(mol)
-        #print(path)
+        #print(mol)
+
         results[mol] = {}
-        
+        #ethane~methanol/free/output/analysis_gro/results.txt
         try:
-            results[mol]['DG_TI_free'] = readTI("%s/%s/%s/free/analysis_gro/results.txt" % (path,mol,run_numb))
+            results[mol]['DG_TI_free'] = readTI("%s/%s/free/output/analysis_gro/results.txt" % (inputfolder,mol))
+
         except:
             results[mol]['DG_TI_free'] = float(999.0)
-        
+
         try:
-            results[mol]['DG_TI_vac'] = readTI("%s/%s/%s/vacuum/analysis_gro/results.txt" % (path,mol,run_numb))
+            results[mol]['DG_TI_vac'] = readTI("%s/%s/vacuum/output/analysis_gro/results.txt" % (inputfolder,mol))
         except:
             results[mol]['DG_TI_vac'] = float(999.0)
 
         try:
-            results[mol]['DG_FUNC_0'] = readCOULCOR("%s/%s/%s/free/freenrg-COULCOR_lam-0.000.dat" % (path,mol,run_numb))
+            results[mol]['DG_FUNC_0'] = readCOULCOR("%s/%s/free/output/freenrg-COULCOR-lam-0.000.dat" % (inputfolder,mol))
         except:
             results[mol]['DG_FUNC_0'] = float(999.0)
 
         try:
-            results[mol]['DG_FUNC_1'] = readCOULCOR("%s/%s/%s/free/freenrg-COULCOR_lam-1.000.dat" % (path,mol,run_numb))
+            results[mol]['DG_FUNC_1'] = readCOULCOR("%s/%s/free/output/freenrg-COULCOR-lam-1.000.dat" % (inputfolder,mol))
         except:
             results[mol]['DG_FUNC_1'] = float(999.0)
 
         try:
-            results[mol]['DG_LJ_LRC'] = readLJCOR("%s/%s/%s/free/freenrg-LJCOR.dat" % (path,mol,run_numb))
+            results[mol]['DG_LJ_LRC_0'] = readLJCOR("%s/%s/free/output/freenrg-LJCOR-lam-0.000.dat" % (inputfolder,mol))
         except:
-            results[mol]['DG_LJ_LRC'] = float(999.0)
-        
+            results[mol]['DG_LJ_LRC_0'] = float(999.0)
+
+        try:
+            results[mol]['DG_LJ_LRC_1'] = readLJCOR("%s/%s/free/output/freenrg-LJCOR-lam-1.000.dat" % (inputfolder,mol))
+        except:
+            results[mol]['DG_LJ_LRC_1'] = float(999.0)
 
 
 #Save everything
-name_total = run_numb + ".csv"
-total = open(name_total,"w")
+total = open(sys.argv[2],"w")
 
 total.write("morph,VACUUM,FREE\n")
 
-total.write(",TI,TI,FUNC-lam-0.000,FUNC-lam-1.000,LRC\n")
+total.write(",TI,TI,FUNC-lam-0.000,FUNC-lam-1.000,LRC-lam-0.000,LRC-lam-1.000\n")
 
 for mol in results:
-    
+
     outline = "%s," % mol
 
     outline += "%8.5f," % (results[mol]['DG_TI_vac'])
     outline += "%8.5f," % (results[mol]['DG_TI_free'])
     outline += "%8.5f," % (results[mol]['DG_FUNC_0'])
     outline += "%8.5f," % (results[mol]['DG_FUNC_1'])
-    outline += "%8.5f" % (results[mol]['DG_LJ_LRC'])
- 
+    outline += "%8.5f," % (results[mol]['DG_LJ_LRC_0'])
+    outline += "%8.5f" % (results[mol]['DG_LJ_LRC_1'])
+
+
     outline+="\n"
 
     total.write(outline)
-
-
+    print(mol)
+    print(results[mol])
